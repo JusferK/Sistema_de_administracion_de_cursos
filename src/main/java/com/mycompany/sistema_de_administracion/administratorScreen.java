@@ -1,248 +1,196 @@
 package com.mycompany.sistema_de_administracion;
-import java.awt.Color;
 public class administratorScreen extends javax.swing.JFrame {
+    
     public administratorScreen() {
         initComponents();
-        jLabel3.setBackground(new Color(255, 255, 255, 127));
-        jLabel3.setText("Welcome " + administrator.adminName + " you are an administrator");
+        welcomeLabel.setText("Welcome " + Sistema_De_Administracion.mainAdmin.getAdminName() + ", you are an administrator");
     }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jButton15 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jLabel2 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
-        jButton17 = new javax.swing.JButton();
-        jButton18 = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
-        jButton20 = new javax.swing.JButton();
-        jButton21 = new javax.swing.JButton();
-        jButton22 = new javax.swing.JButton();
-        jButton23 = new javax.swing.JButton();
-        jButton24 = new javax.swing.JButton();
-        jButton25 = new javax.swing.JButton();
+        basement = new javax.swing.JPanel();
+        createProf = new javax.swing.JButton();
+        profQuery = new javax.swing.JButton();
+        editProfInfo = new javax.swing.JButton();
+        createStud = new javax.swing.JButton();
+        studQuery = new javax.swing.JButton();
+        editStudInfo = new javax.swing.JButton();
+        createCourse = new javax.swing.JButton();
+        editCourse = new javax.swing.JButton();
+        courseQuery = new javax.swing.JButton();
+        editCourse1 = new javax.swing.JButton();
+        logout = new javax.swing.JButton();
+        myProfile = new javax.swing.JButton();
+        massLoadProf = new javax.swing.JButton();
+        massLoadStud = new javax.swing.JButton();
+        massLoadStud1 = new javax.swing.JButton();
+        content = new javax.swing.JPanel();
+        welcomeLabel = new javax.swing.JLabel();
+        adminIcon = new javax.swing.JLabel();
+        backgroundImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(244, 244, 244));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        basement.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setFont(new java.awt.Font("Assistant ExtraBold", 0, 48)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 120, 930, 380));
-
-        jButton15.setText("Log out");
-        jPanel1.add(jButton15, new org.netbeans.lib.awtextra.AbsoluteConstraints(1710, 680, -1, -1));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon("/home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/images/admin-icon.png")); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 390, 170, 280));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("/home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/images/background-login.jpg")); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 1800, 670));
-        jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon("/home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/images/background-login.jpg")); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 1280, 670));
-
-        jButton2.setText("Create professor");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+        createProf.setText("Create prof.");
+        createProf.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                createProfMouseClicked(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 160, 50));
-
-        jButton13.setText("jButton1");
-        jButton13.addActionListener(new java.awt.event.ActionListener() {
+        createProf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton13ActionPerformed(evt);
+                createProfActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(1650, 0, 150, 50));
+        basement.add(createProf, new org.netbeans.lib.awtextra.AbsoluteConstraints(-7, 0, 140, 53));
 
-        jButton14.setText("jButton1");
-        jButton14.addActionListener(new java.awt.event.ActionListener() {
+        profQuery.setText("Prof. query");
+        basement.add(profQuery, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, -1, 53));
+
+        editProfInfo.setText("Edit prof info");
+        basement.add(editProfInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, -1, 53));
+
+        createStud.setText("Create stud.");
+        basement.add(createStud, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, -1, 53));
+
+        studQuery.setText("Stud. query");
+        basement.add(studQuery, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 0, -1, 53));
+
+        editStudInfo.setText("Edit stud. info");
+        basement.add(editStudInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 0, -1, 53));
+
+        createCourse.setText("Create cour.");
+        basement.add(createCourse, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 0, -1, 53));
+
+        editCourse.setText("Edit cour.");
+        basement.add(editCourse, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 0, -1, 53));
+
+        courseQuery.setText("Cour. query");
+        basement.add(courseQuery, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 0, -1, 53));
+
+        editCourse1.setText("Assign cour.");
+        editCourse1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton14ActionPerformed(evt);
+                editCourse1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton14, new org.netbeans.lib.awtextra.AbsoluteConstraints(1500, 0, 150, 50));
+        basement.add(editCourse1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 0, -1, 53));
 
-        jButton16.setText("jButton1");
-        jButton16.addActionListener(new java.awt.event.ActionListener() {
+        logout.setText("Log out");
+        basement.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(1470, 630, 95, -1));
+
+        myProfile.setText("My profile");
+        basement.add(myProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(1360, 630, -1, -1));
+
+        massLoadProf.setText("Massive prof load");
+        massLoadProf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton16ActionPerformed(evt);
+                massLoadProfActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton16, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 0, 150, 50));
+        basement.add(massLoadProf, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 0, -1, 53));
 
-        jButton17.setText("jButton1");
-        jButton17.addActionListener(new java.awt.event.ActionListener() {
+        massLoadStud.setText("Massive stud load ");
+        massLoadStud.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton17ActionPerformed(evt);
+                massLoadStudActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton17, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 0, 150, 50));
+        basement.add(massLoadStud, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 0, -1, 53));
 
-        jButton18.setText("jButton1");
-        jButton18.addActionListener(new java.awt.event.ActionListener() {
+        massLoadStud1.setText("Massive courses load");
+        massLoadStud1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton18ActionPerformed(evt);
+                massLoadStud1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton18, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 0, 150, 50));
+        basement.add(massLoadStud1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1420, 0, -1, 53));
 
-        jButton19.setText("jButton1");
-        jButton19.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton19ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton19, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 0, 150, 50));
+        content.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton20.setText("jButton1");
-        jButton20.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton20ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton20, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 0, 150, 50));
+        welcomeLabel.setFont(new java.awt.Font("Assistant ExtraBold", 0, 48)); // NOI18N
+        content.add(welcomeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 1070, 315));
 
-        jButton21.setText("jButton1");
-        jButton21.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton21ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton21, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, 140, 50));
+        adminIcon.setIcon(new javax.swing.ImageIcon("/home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/images/admin-icon.png")); // NOI18N
+        content.add(adminIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 210, 149, 162));
 
-        jButton22.setText("jButton1");
-        jButton22.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton22ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton22, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 0, 150, 50));
+        backgroundImage.setIcon(new javax.swing.ImageIcon("/home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/com/mycompany/sistema_de_administracion/background-login.jpg")); // NOI18N
+        content.add(backgroundImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1600, 550));
 
-        jButton23.setText("jButton1");
-        jButton23.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton23ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton23, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 0, 150, 50));
-
-        jButton24.setText("jButton1");
-        jButton24.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton24ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton24, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 160, 50));
-
-        jButton25.setText("jButton1");
-        jButton25.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton25ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton25, new org.netbeans.lib.awtextra.AbsoluteConstraints(1350, 0, 150, 50));
+        basement.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1600, 551));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(basement, javax.swing.GroupLayout.PREFERRED_SIZE, 1593, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(basement, javax.swing.GroupLayout.DEFAULT_SIZE, 673, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void editCourse1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editCourse1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_editCourse1ActionPerformed
 
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+    private void massLoadProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_massLoadProfActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton13ActionPerformed
+    }//GEN-LAST:event_massLoadProfActionPerformed
 
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+    private void massLoadStudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_massLoadStudActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton14ActionPerformed
+    }//GEN-LAST:event_massLoadStudActionPerformed
 
-    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+    private void massLoadStud1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_massLoadStud1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton16ActionPerformed
+    }//GEN-LAST:event_massLoadStud1ActionPerformed
 
-    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+    private void createProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createProfActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton17ActionPerformed
+    }//GEN-LAST:event_createProfActionPerformed
 
-    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton18ActionPerformed
+    private void createProfMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createProfMouseClicked
+        // EVENT HERE MATE
+        welcomePackageFade();
+    }//GEN-LAST:event_createProfMouseClicked
 
-    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton19ActionPerformed
-
-    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton20ActionPerformed
-
-    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton21ActionPerformed
-
-    private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton22ActionPerformed
-
-    private void jButton23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton23ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton23ActionPerformed
-
-    private void jButton24ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton24ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton24ActionPerformed
-
-    private void jButton25ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton25ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton25ActionPerformed
-        
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    javax.swing.JButton jButton13;
-    javax.swing.JButton jButton14;
-    javax.swing.JButton jButton15;
-    javax.swing.JButton jButton16;
-    javax.swing.JButton jButton17;
-    javax.swing.JButton jButton18;
-    javax.swing.JButton jButton19;
-    javax.swing.JButton jButton2;
-    javax.swing.JButton jButton20;
-    javax.swing.JButton jButton21;
-    javax.swing.JButton jButton22;
-    javax.swing.JButton jButton23;
-    javax.swing.JButton jButton24;
-    javax.swing.JButton jButton25;
-    javax.swing.JLabel jLabel1;
-    javax.swing.JLabel jLabel2;
-    javax.swing.JLabel jLabel3;
-    javax.swing.JLabel jLabel4;
-    javax.swing.JPanel jPanel1;
-    javax.swing.JTabbedPane jTabbedPane1;
+    javax.swing.JLabel adminIcon;
+    javax.swing.JLabel backgroundImage;
+    javax.swing.JPanel basement;
+    javax.swing.JPanel content;
+    javax.swing.JButton courseQuery;
+    javax.swing.JButton createCourse;
+    javax.swing.JButton createProf;
+    javax.swing.JButton createStud;
+    javax.swing.JButton editCourse;
+    javax.swing.JButton editCourse1;
+    javax.swing.JButton editProfInfo;
+    javax.swing.JButton editStudInfo;
+    javax.swing.JButton logout;
+    javax.swing.JButton massLoadProf;
+    javax.swing.JButton massLoadStud;
+    javax.swing.JButton massLoadStud1;
+    javax.swing.JButton myProfile;
+    javax.swing.JButton profQuery;
+    javax.swing.JButton studQuery;
+    javax.swing.JLabel welcomeLabel;
     // End of variables declaration//GEN-END:variables
+
+    private void welcomePackageFade() {
+        welcomeLabel.setVisible(false);
+        adminIcon.setVisible(false);
+    }
 }
+
+

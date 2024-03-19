@@ -8,6 +8,8 @@ public class Login extends javax.swing.JFrame {
         
         initComponents();
         jPanel2.setBackground(new Color(255, 255, 255, 127));
+        
+        
     }
     
     @SuppressWarnings("unchecked")
@@ -139,19 +141,37 @@ public class Login extends javax.swing.JFrame {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         
-        String[] loginInputs = {jTextField4.getText(), jTextField3.getText()};
-        String[] adminInfo = {administrator.user, administrator.password};
-        boolean adminAuthorizedOrNot = verification(loginInputs[0], loginInputs[1], adminInfo[0], adminInfo[1]);
-        administratorScreen newScreen = new administratorScreen();
+        String[] inputFields = {jTextField4.getText(), jTextField3.getText()};
         
-        if (adminAuthorizedOrNot) {
-            newScreen.setVisible(true);
-            newScreen.setResizable(false);
+        boolean adminResult = Sistema_De_Administracion.mainAdmin.login(inputFields[0], inputFields[1]);
+        boolean professorResult = Sistema_De_Administracion.newProfessor.login(inputFields[0], inputFields[1]);
+        boolean studenResult = Sistema_De_Administracion.newStudent.studentlogin(inputFields[0], inputFields[1]);
+        
+        
+        
+        administratorScreen adminScreen = new administratorScreen();
+        professorScreen profScreen = new professorScreen();
+        studentScreen studScreen = new studentScreen();
+        
+        if (adminResult) {
+            adminScreen.setVisible(true);
+            adminScreen.setResizable(false);
             this.dispose();
             JOptionPane.showMessageDialog(this, "Login succesful!");
-        } else {
+        } else if(professorResult) {
+            profScreen.setVisible(true);
+            profScreen.setResizable(false);
+            this.dispose();
+            JOptionPane.showMessageDialog(this, "Login succesful!");
+        } else if(studenResult) {
+            studScreen.setVisible(true);
+            studScreen.setResizable(false);
+            this.dispose();
+            JOptionPane.showMessageDialog(this, "Login succesful!");
+        } 
+        if(!adminResult && !professorResult && !studenResult) {
             JOptionPane.showMessageDialog(this, "User or password not found");
-        }
+        }  
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void jTextField4FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextField4FocusGained
@@ -203,8 +223,4 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
-
-    private boolean verification(String userInput, String passwordInput, String User, String Pass) {
-        return userInput.equals(User) && passwordInput.equals(Pass);
-    }
 }
