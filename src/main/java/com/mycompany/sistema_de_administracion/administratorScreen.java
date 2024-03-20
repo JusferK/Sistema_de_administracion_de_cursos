@@ -1,16 +1,24 @@
 package com.mycompany.sistema_de_administracion;
+import java.awt.BorderLayout;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
+
 public class administratorScreen extends javax.swing.JFrame {
     
     public administratorScreen() {
         initComponents();
-        welcomeLabel.setText("Welcome " + Sistema_De_Administracion.mainAdmin.getAdminName() + ", you are an administrator");
+        adminPanels.welcomeAdmin welcomeScreen = new adminPanels.welcomeAdmin();
+        showPanel(welcomeScreen);
     }
+    
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         basement = new javax.swing.JPanel();
+        content = new javax.swing.JPanel();
         createProf = new javax.swing.JButton();
         profQuery = new javax.swing.JButton();
         editProfInfo = new javax.swing.JButton();
@@ -26,14 +34,25 @@ public class administratorScreen extends javax.swing.JFrame {
         massLoadProf = new javax.swing.JButton();
         massLoadStud = new javax.swing.JButton();
         massLoadStud1 = new javax.swing.JButton();
-        content = new javax.swing.JPanel();
-        welcomeLabel = new javax.swing.JLabel();
-        adminIcon = new javax.swing.JLabel();
         backgroundImage = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         basement.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        javax.swing.GroupLayout contentLayout = new javax.swing.GroupLayout(content);
+        content.setLayout(contentLayout);
+        contentLayout.setHorizontalGroup(
+            contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1590, Short.MAX_VALUE)
+        );
+        contentLayout.setVerticalGroup(
+            contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 560, Short.MAX_VALUE)
+        );
+
+        basement.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1590, 560));
+        content.setOpaque(false);
 
         createProf.setText("Create prof.");
         createProf.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -49,12 +68,27 @@ public class administratorScreen extends javax.swing.JFrame {
         basement.add(createProf, new org.netbeans.lib.awtextra.AbsoluteConstraints(-7, 0, 140, 53));
 
         profQuery.setText("Prof. query");
+        profQuery.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                profQueryMouseClicked(evt);
+            }
+        });
+        profQuery.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                profQueryActionPerformed(evt);
+            }
+        });
         basement.add(profQuery, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 0, -1, 53));
 
         editProfInfo.setText("Edit prof info");
         basement.add(editProfInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, -1, 53));
 
         createStud.setText("Create stud.");
+        createStud.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createStudActionPerformed(evt);
+            }
+        });
         basement.add(createStud, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 0, -1, 53));
 
         studQuery.setText("Stud. query");
@@ -81,6 +115,16 @@ public class administratorScreen extends javax.swing.JFrame {
         basement.add(editCourse1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 0, -1, 53));
 
         logout.setText("Log out");
+        logout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                logoutMouseClicked(evt);
+            }
+        });
+        logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutActionPerformed(evt);
+            }
+        });
         basement.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(1470, 630, 95, -1));
 
         myProfile.setText("My profile");
@@ -110,18 +154,8 @@ public class administratorScreen extends javax.swing.JFrame {
         });
         basement.add(massLoadStud1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1420, 0, -1, 53));
 
-        content.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        welcomeLabel.setFont(new java.awt.Font("Assistant ExtraBold", 0, 48)); // NOI18N
-        content.add(welcomeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 1070, 315));
-
-        adminIcon.setIcon(new javax.swing.ImageIcon("/home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/images/admin-icon.png")); // NOI18N
-        content.add(adminIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 210, 149, 162));
-
-        backgroundImage.setIcon(new javax.swing.ImageIcon("/home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/com/mycompany/sistema_de_administracion/background-login.jpg")); // NOI18N
-        content.add(backgroundImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1600, 550));
-
-        basement.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1600, 551));
+        backgroundImage.setIcon(new javax.swing.ImageIcon("/home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/images/background-login.jpg")); // NOI18N
+        basement.add(backgroundImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1600, 690));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -133,7 +167,7 @@ public class administratorScreen extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(basement, javax.swing.GroupLayout.DEFAULT_SIZE, 673, Short.MAX_VALUE)
+            .addComponent(basement, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -156,16 +190,37 @@ public class administratorScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_massLoadStud1ActionPerformed
 
     private void createProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createProfActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_createProfActionPerformed
 
     private void createProfMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_createProfMouseClicked
-        // EVENT HERE MATE
-        welcomePackageFade();
+        adminPanels.createProfP newContainer = new adminPanels.createProfP();
+        showPanel(newContainer);
     }//GEN-LAST:event_createProfMouseClicked
 
+    private void profQueryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profQueryActionPerformed
+        
+    }//GEN-LAST:event_profQueryActionPerformed
+
+    private void profQueryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_profQueryMouseClicked
+        adminPanels.professorQuery newContainer = new adminPanels.professorQuery();
+        showPanel(newContainer);
+    }//GEN-LAST:event_profQueryMouseClicked
+
+    private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_logoutActionPerformed
+
+    private void logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseClicked
+        administrator.logout(this);
+    }//GEN-LAST:event_logoutMouseClicked
+
+    private void createStudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createStudActionPerformed
+        adminPanels.createStudentP newContainer = new adminPanels.createStudentP();
+        showPanel(newContainer);
+    }//GEN-LAST:event_createStudActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    javax.swing.JLabel adminIcon;
     javax.swing.JLabel backgroundImage;
     javax.swing.JPanel basement;
     javax.swing.JPanel content;
@@ -184,13 +239,16 @@ public class administratorScreen extends javax.swing.JFrame {
     javax.swing.JButton myProfile;
     javax.swing.JButton profQuery;
     javax.swing.JButton studQuery;
-    javax.swing.JLabel welcomeLabel;
     // End of variables declaration//GEN-END:variables
 
-    private void welcomePackageFade() {
-        welcomeLabel.setVisible(false);
-        adminIcon.setVisible(false);
+    private void showPanel(JPanel panel) {
+        panel.setSize(1050, 520);
+        panel.setLocation(300, 0);
+        panel.setOpaque(false);
+        
+        content.removeAll();
+        content.add(panel, BorderLayout.CENTER);
+        content.revalidate();
+        content.repaint();
     }
 }
-
-

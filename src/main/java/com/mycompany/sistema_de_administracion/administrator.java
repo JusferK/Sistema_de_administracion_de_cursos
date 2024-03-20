@@ -1,4 +1,7 @@
 package com.mycompany.sistema_de_administracion;
+
+import javax.swing.JFrame;
+
 public class administrator {
     
     public String user;
@@ -29,5 +32,11 @@ public class administrator {
     
     public boolean login(String userField, String passwordField) {
         return this.user.equals(userField) && this.password.equals(passwordField);
+    }
+    
+    public static void logout(JFrame currentScreen) {
+        currentScreen.dispose();
+        Login newLogin = new Login();
+        newLogin.setVisible(true);
     }
 }

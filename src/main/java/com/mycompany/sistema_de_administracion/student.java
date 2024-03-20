@@ -38,8 +38,16 @@ public class student extends administrator {
     
     
     
-    public boolean studentlogin(String studentIDField, String passwordField) {
-        return this.studentID.equals(studentIDField) && this.password.equals(passwordField);
+    public static boolean studentLogin(String studentID, String passwordField) {
+        boolean found = false;
+        for (student s : Sistema_De_Administracion.studentList) {
+            if (s.studentID.equals(studentID) && s.password.equals(passwordField)) {
+                found = true;
+            } else {
+                found = false;
+            }
+        }
+        return found;
     }
     
 }
