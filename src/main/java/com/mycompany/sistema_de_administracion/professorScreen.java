@@ -1,4 +1,6 @@
 package com.mycompany.sistema_de_administracion;
+import java.awt.BorderLayout;
+import javax.swing.JPanel;
 
 
 public class professorScreen extends javax.swing.JFrame {
@@ -6,6 +8,9 @@ public class professorScreen extends javax.swing.JFrame {
     
     public professorScreen() {
         initComponents();
+        
+        professorPanels.welcomeScreenProfessor welcomeScreen = new professorPanels.welcomeScreenProfessor();
+        showPanel(welcomeScreen);
     }
     
     @SuppressWarnings("unchecked")
@@ -98,4 +103,16 @@ public class professorScreen extends javax.swing.JFrame {
     javax.swing.JButton myProfile;
     javax.swing.JButton studAssigCoursesQ;
     // End of variables declaration//GEN-END:variables
+
+    public void showPanel(JPanel panel) {
+        panel.setSize(900, 320);
+        panel.setLocation(100, 0);
+        panel.setOpaque(false);
+        
+        content.removeAll();
+        content.add(panel, BorderLayout.CENTER);
+        content.revalidate();
+        content.repaint();
+    }
+
 }

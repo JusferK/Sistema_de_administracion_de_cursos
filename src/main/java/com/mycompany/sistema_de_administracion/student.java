@@ -2,8 +2,8 @@ package com.mycompany.sistema_de_administracion;
 public class student extends administrator {
     
     private String studentID;
-    private String studentName;
-    private String studentLastName;
+    public static String studentName;
+    public static String studentLastName;
     
     public student(String studentName, String studentLastName, String studentID, String password) {
         super(password);

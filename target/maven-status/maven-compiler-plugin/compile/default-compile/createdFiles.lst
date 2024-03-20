@@ -9,7 +9,9 @@ com/mycompany/sistema_de_administracion/administratorScreen$3.class
 adminPanels/createStudentP$1.class
 com/mycompany/sistema_de_administracion/administratorScreen$5.class
 adminPanels/professorQuery.class
+professorPanels/welcomeScreenProfessor.class
 com/mycompany/sistema_de_administracion/administrator.class
+studentPanels/welcomeScreenStudent.class
 com/mycompany/sistema_de_administracion/Login$4.class
 adminPanels/createProfP$2.class
 com/mycompany/sistema_de_administracion/administratorScreen.class

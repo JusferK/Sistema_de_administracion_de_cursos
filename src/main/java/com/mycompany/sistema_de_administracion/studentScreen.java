@@ -1,9 +1,16 @@
 package com.mycompany.sistema_de_administracion;
 
+import java.awt.BorderLayout;
+import javax.swing.JPanel;
+
 public class studentScreen extends javax.swing.JFrame {
 
     public studentScreen() {
+        
         initComponents();
+        
+        studentPanels.welcomeScreenStudent welcomeScreen = new studentPanels.welcomeScreenStudent();
+        showPanel(welcomeScreen);
     }
     
     @SuppressWarnings("unchecked")
@@ -102,4 +109,16 @@ public class studentScreen extends javax.swing.JFrame {
     javax.swing.JButton myProfile;
     javax.swing.JButton unassgCourse;
     // End of variables declaration//GEN-END:variables
+
+    public void showPanel(JPanel panel) {
+        panel.setSize(900, 320);
+        panel.setLocation(100, 0);
+        panel.setOpaque(false);
+        
+        content.removeAll();
+        content.add(panel, BorderLayout.CENTER);
+        content.revalidate();
+        content.repaint();
+    }
+
 }

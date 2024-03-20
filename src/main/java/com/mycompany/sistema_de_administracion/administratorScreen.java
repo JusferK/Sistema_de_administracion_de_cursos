@@ -1,8 +1,6 @@
 package com.mycompany.sistema_de_administracion;
 import java.awt.BorderLayout;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
 
 public class administratorScreen extends javax.swing.JFrame {
     
@@ -241,7 +239,7 @@ public class administratorScreen extends javax.swing.JFrame {
     javax.swing.JButton studQuery;
     // End of variables declaration//GEN-END:variables
 
-    private void showPanel(JPanel panel) {
+    public void showPanel(JPanel panel) {
         panel.setSize(1050, 520);
         panel.setLocation(300, 0);
         panel.setOpaque(false);
