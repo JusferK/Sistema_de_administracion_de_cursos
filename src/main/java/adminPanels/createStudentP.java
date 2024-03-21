@@ -113,19 +113,26 @@ public class createStudentP extends javax.swing.JPanel {
     }//GEN-LAST:event_lastNameFieldActionPerformed
 
     private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
+        
+        String[] Regexes = {"^[a-zA-Z]+$", "^[a-zA-Z0-9]{8,8}$", "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]).{8,}$"};
+        
         String name = nameField.getText();
         String lastName = lastNameField.getText();
-        String studenID = studentIDField.getText();
+        String studentID = studentIDField.getText();
         String password = passwordField.getText();
 
-        com.mycompany.sistema_de_administracion.student newStudent = new com.mycompany.sistema_de_administracion.student(name, lastName, studenID, password);
-        com.mycompany.sistema_de_administracion.Sistema_De_Administracion.studentList.add(newStudent);
+        if (password.matches(Regexes[2]) && name.matches(Regexes[0]) && lastName.matches(Regexes[0]) && studentID.matches(Regexes[1])) {
+            com.mycompany.sistema_de_administracion.student newStudent = new com.mycompany.sistema_de_administracion.student(name, lastName, studentID, password);
+            com.mycompany.sistema_de_administracion.Sistema_De_Administracion.studentList.add(newStudent);
 
-        JOptionPane.showMessageDialog(this, "Student was created succesfully!");
-        nameField.setText("");
-        lastNameField.setText("");
-        studentIDField.setText("");
-        passwordField.setText("");
+            JOptionPane.showMessageDialog(this, "Student was created succesfully!");
+            nameField.setText("");
+            lastNameField.setText("");
+            studentIDField.setText("");
+            passwordField.setText("");
+        } else {
+            JOptionPane.showMessageDialog(this, "Make sure the all fields contains the parameters needed!");
+        }
     }//GEN-LAST:event_saveBtnActionPerformed
 
 
