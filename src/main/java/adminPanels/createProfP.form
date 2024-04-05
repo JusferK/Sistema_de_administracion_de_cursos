@@ -242,7 +242,7 @@
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="&quot;&lt;html&gt;  ADVISEMENT: In order to create new credentials for a new professor, name and last name only text, the user needs to be alphanumeric field allow and the password need to contain at least: &lt;ul&gt;&lt;li&gt;One Upper case &lt;li&gt;One Lower case &lt;li&gt;One special character &lt;li&gt;One number &lt;ul&gt;&lt;html&gt;&quot;" type="code"/>
+              <Connection code="&quot;&lt;html&gt;  Instructions: In order to create new credentials for a new professor, name and last name can only be text, the user needs to be alphanumeric and the password need to contain at least: &lt;ul&gt;&lt;li&gt;One Upper case &lt;li&gt;One Lower case &lt;li&gt;One special character &lt;li&gt;One number &lt;ul&gt;&lt;html&gt;&quot;" type="code"/>
             </Property>
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="alignmentX" type="float" value="0.5"/>

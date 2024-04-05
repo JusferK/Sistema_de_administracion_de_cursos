@@ -5,14 +5,14 @@ import javax.swing.JPanel;
 
 public class studentScreen extends javax.swing.JFrame {
 
-    public studentScreen() {
-        
+    public studentScreen(String name) {
+
         initComponents();
-        
-        studentPanels.welcomeScreenStudent welcomeScreen = new studentPanels.welcomeScreenStudent();
+
+        studentPanels.welcomeScreenStudent welcomeScreen = new studentPanels.welcomeScreenStudent(name);
         showPanel(welcomeScreen);
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -97,7 +97,6 @@ public class studentScreen extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_unassgCourseActionPerformed
 
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     javax.swing.JButton assgCourses;
@@ -114,7 +113,7 @@ public class studentScreen extends javax.swing.JFrame {
         panel.setSize(900, 320);
         panel.setLocation(100, 0);
         panel.setOpaque(false);
-        
+
         content.removeAll();
         content.add(panel, BorderLayout.CENTER);
         content.revalidate();

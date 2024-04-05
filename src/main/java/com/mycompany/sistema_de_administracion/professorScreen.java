@@ -6,10 +6,10 @@ import javax.swing.JPanel;
 public class professorScreen extends javax.swing.JFrame {
 
     
-    public professorScreen() {
+    public professorScreen(String name) {
         initComponents();
         
-        professorPanels.welcomeScreenProfessor welcomeScreen = new professorPanels.welcomeScreenProfessor();
+        professorPanels.welcomeScreenProfessor welcomeScreen = new professorPanels.welcomeScreenProfessor(name);
         showPanel(welcomeScreen);
     }
     
@@ -114,5 +114,4 @@ public class professorScreen extends javax.swing.JFrame {
         content.revalidate();
         content.repaint();
     }
-
 }

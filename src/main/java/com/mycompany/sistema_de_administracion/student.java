@@ -1,9 +1,11 @@
 package com.mycompany.sistema_de_administracion;
+import java.util.ArrayList;
 public class student extends administrator {
     
     private String studentID;
-    public static String studentName;
-    public static String studentLastName;
+    private String studentName;
+    private String studentLastName;
+    public ArrayList<Class> coursesAssigned = new ArrayList<>();
     
     public student(String studentName, String studentLastName, String studentID, String password) {
         super(password);
@@ -12,16 +14,16 @@ public class student extends administrator {
         this.studentID = studentID;
     }
     
-    public String getStudentName(String studentName) {
-        return studentName;
+    public String getStudentName() {
+        return this.studentName;
     }
     
     public void setStudentName(String studentName) {
         this.studentName = studentName;
     }
     
-    public String getStudentLastName(String studentLastName) {
-        return studentLastName;
+    public String getStudentLastName() {
+        return this.studentLastName;
     }
     
     public void setStudentLastName(String studentLastName) {
@@ -29,7 +31,7 @@ public class student extends administrator {
     }
     
     public String getStudentID() {
-        return studentID;
+        return this.studentID;
     }
     
     public void setStudentID(String studentID) {
@@ -41,8 +43,9 @@ public class student extends administrator {
     public static boolean studentLogin(String studentID, String passwordField) {
         boolean found = false;
         for (student s : Sistema_De_Administracion.studentList) {
-            if (s.studentID.equals(studentID) && s.password.equals(passwordField)) {
+            if (s.getStudentID().equals(studentID) && s.password.equals(passwordField)) {
                 found = true;
+                break;
             } else {
                 found = false;
             }
@@ -50,4 +53,13 @@ public class student extends administrator {
         return found;
     }
     
+    public static String studentWelcomeName(String user) {
+        String lookingForName = null;
+        for(student s : Sistema_De_Administracion.studentList) {
+            if (s.getStudentID().equals(user)) {
+               lookingForName = s.studentName; 
+            }
+        }
+        return lookingForName;
+    }
 }

@@ -1,9 +1,9 @@
 package studentPanels;
 public class welcomeScreenStudent extends javax.swing.JPanel {
     
-    public welcomeScreenStudent() {
+    public welcomeScreenStudent(String name) {
         initComponents();
-        welcomeLabel.setText("Welcome " + com.mycompany.sistema_de_administracion.student.studentName + ", you are a student");
+        welcomeLabel.setText("Welcome " + name + ", you are a student");
     }
     
     @SuppressWarnings("unchecked")
@@ -19,10 +19,10 @@ public class welcomeScreenStudent extends javax.swing.JPanel {
 
         welcomeLabel.setFont(new java.awt.Font("Assistant ExtraBold", 0, 48)); // NOI18N
         welcomeLabel.setForeground(new java.awt.Color(255, 255, 255));
-        basement.add(welcomeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 210));
+        basement.add(welcomeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 820, 210));
 
         adminIcon.setIcon(new javax.swing.ImageIcon("/home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/images/student-icon.png")); // NOI18N
-        basement.add(adminIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 160, 149, 162));
+        basement.add(adminIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 180, 149, 140));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

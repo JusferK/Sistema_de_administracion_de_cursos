@@ -1,6 +1,5 @@
 package adminPanels;
-import java.awt.Color;
-import java.io.IOException;
+
 import javax.swing.JOptionPane;
 public class createProfP extends javax.swing.JPanel {
     
@@ -84,7 +83,7 @@ public class createProfP extends javax.swing.JPanel {
         instructions.setFont(new java.awt.Font("Assistant", 0, 14)); // NOI18N
         instructions.setForeground(new java.awt.Color(255, 255, 255));
         instructions.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        instructions.setText("<html>  ADVISEMENT: In order to create new credentials for a new professor, name and last name only text, the user needs to be alphanumeric field allow and the password need to contain at least: <ul><li>One Upper case <li>One Lower case <li>One special character <li>One number <ul><html>");
+        instructions.setText("<html>  Instructions: In order to create new credentials for a new professor, name and last name can only be text, the user needs to be alphanumeric and the password need to contain at least: <ul><li>One Upper case <li>One Lower case <li>One special character <li>One number <ul><html>");
         instructions.setToolTipText("");
         instructions.setAlignmentX(0.5F);
         instructions.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -172,8 +171,6 @@ public class createProfP extends javax.swing.JPanel {
 
     private void saveBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveBtnActionPerformed
         String[] Regexes = {"^[a-zA-Z]+$", "^[a-zA-Z0-9]*$", "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]).{8,}$"};
-        
-        
         
         String name = nameField.getText();
         String lastName = lastNameField.getText();

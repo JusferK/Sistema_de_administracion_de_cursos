@@ -1,9 +1,13 @@
 package com.mycompany.sistema_de_administracion;
 public class professor extends administrator {
     
-    public static String name;
-    public static String lastName;
+    private String name;
+    public String lastName;
 
+    public String getName() {
+        return name;
+    }
+    
     public professor(String name, String lastName, String user, String password) { // constructor para crear una instancia
         super(user, password);
         this.name = name;
@@ -15,10 +19,22 @@ public class professor extends administrator {
         for (professor p : Sistema_De_Administracion.professorsList) {
             if (p.user.equals(userField) && p.password.equals(passwordField)) {
                 found = true;
+                break;
             } else {
                 found = false;
             }
         }
         return found;
+    }
+    
+    public static String professorWelcomeName(String user) {
+        String lookingForName = null;
+        for(professor p : Sistema_De_Administracion.professorsList) {
+            if (p.user.equals(user)) {
+               lookingForName = p.getName(); 
+            }
+        }
+        
+        return lookingForName;
     }
 }
