@@ -8,7 +8,11 @@ public class professor extends administrator {
         return name;
     }
     
-    public professor(String name, String lastName, String user, String password) { // constructor para crear una instancia
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    public professor(String name, String lastName, String user, String password) {
         super(user, password);
         this.name = name;
         this.lastName = lastName;

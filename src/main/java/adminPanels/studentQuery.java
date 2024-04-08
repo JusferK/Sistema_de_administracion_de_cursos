@@ -38,27 +38,13 @@ public class studentQuery extends javax.swing.JPanel {
 
         studentQTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
             }
-        });
+        ));
         jScrollPane1.setViewportView(studentQTable);
-        if (studentQTable.getColumnModel().getColumnCount() > 0) {
-            studentQTable.getColumnModel().getColumn(0).setResizable(false);
-            studentQTable.getColumnModel().getColumn(1).setResizable(false);
-            studentQTable.getColumnModel().getColumn(2).setResizable(false);
-            studentQTable.getColumnModel().getColumn(3).setResizable(false);
-        }
 
         basement.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 820, 400));
 

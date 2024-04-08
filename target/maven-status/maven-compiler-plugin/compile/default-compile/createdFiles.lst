@@ -3,14 +3,17 @@ adminPanels/coursesAssignedQuery$1.class
 com/mycompany/sistema_de_administracion/Login$6.class
 com/mycompany/sistema_de_administracion/Login$3.class
 com/mycompany/sistema_de_administracion/administratorScreen$3.class
+professorPanels/coursesAssignedProfessorP.class
 adminPanels/coursesAssignedQuery.class
 adminPanels/createStudentP$1.class
 adminPanels/createCoursePanel$7.class
 professorPanels/welcomeScreenProfessor.class
 com/mycompany/sistema_de_administracion/administrator.class
+com/mycompany/sistema_de_administracion/professorScreen$3.class
 adminPanels/assignCourseToStudentP$2.class
 adminPanels/courseQueryPanel.class
 adminPanels/createProfP$2.class
+com/mycompany/sistema_de_administracion/professorScreen$2.class
 adminPanels/createCoursePanel$6.class
 adminPanels/createCoursePanel$3.class
 com/mycompany/sistema_de_administracion/Login.class
@@ -33,6 +36,7 @@ adminPanels/createCoursePanel$2.class
 com/mycompany/sistema_de_administracion/professorScreen$1.class
 com/mycompany/sistema_de_administracion/administratorScreen$1.class
 com/mycompany/sistema_de_administracion/Login$1.class
+professorPanels/coursesAssignedProfessorP$1.class
 com/mycompany/sistema_de_administracion/administratorScreen$15.class
 com/mycompany/sistema_de_administracion/administratorScreen$5.class
 adminPanels/professorQuery.class
@@ -52,7 +56,6 @@ adminPanels/assignCourseToStudentP$1.class
 adminPanels/createCoursePanel$4.class
 com/mycompany/sistema_de_administracion/administratorScreen$11.class
 adminPanels/createProfP.class
-adminPanels/studentQuery$1.class
 com/mycompany/sistema_de_administracion/administratorScreen$6.class
 adminPanels/welcomeAdmin.class
 com/mycompany/sistema_de_administracion/Sistema_De_Administracion.class
