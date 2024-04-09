@@ -275,8 +275,9 @@ public class createCoursePanel extends javax.swing.JPanel {
             startHourCombo.setEnabled(false);
             finishHourCombo.setEnabled(false);
             saveBtn.setEnabled(false);
-        
             idField.setText(ID);
+            
+            JOptionPane.showMessageDialog(this, "Course was created succesfully");
         }
         else {
             JOptionPane.showMessageDialog(this, "Make sure all fields contains information in the valid format or they are not empty");

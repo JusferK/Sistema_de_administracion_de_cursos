@@ -5,7 +5,9 @@ import javax.swing.JPanel;
 public class administratorScreen extends javax.swing.JFrame {
     
     public administratorScreen() {
+        
         initComponents();
+        
         adminPanels.welcomeAdmin welcomeScreen = new adminPanels.welcomeAdmin();
         showPanel(welcomeScreen);
     }
@@ -80,6 +82,11 @@ public class administratorScreen extends javax.swing.JFrame {
         basement.add(profQuery, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 0, 110, 50));
 
         editProfInfo.setText("Edit prof info");
+        editProfInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editProfInfoActionPerformed(evt);
+            }
+        });
         basement.add(editProfInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 0, 120, 50));
 
         createStud.setText("Create stud.");
@@ -104,6 +111,11 @@ public class administratorScreen extends javax.swing.JFrame {
         basement.add(studQuery, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 0, 110, 50));
 
         editStudInfo.setText("Edit stud. info");
+        editStudInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editStudInfoActionPerformed(evt);
+            }
+        });
         basement.add(editStudInfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 0, 130, 50));
 
         createCourse.setText("Create cour.");
@@ -179,6 +191,11 @@ public class administratorScreen extends javax.swing.JFrame {
         basement.add(massLoadStud1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1580, 0, 160, 50));
 
         editCourse.setText("Edit cour.");
+        editCourse.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editCourseActionPerformed(evt);
+            }
+        });
         basement.add(editCourse, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 0, 110, 50));
 
         backgroundImage.setIcon(new javax.swing.ImageIcon("/home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/images/background-login.jpg")); // NOI18N
@@ -234,11 +251,11 @@ public class administratorScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_profQueryMouseClicked
 
     private void logoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutActionPerformed
-        // TODO add your handling code here:
+        administrator.logout(this);
     }//GEN-LAST:event_logoutActionPerformed
 
     private void logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseClicked
-        administrator.logout(this);
+        
     }//GEN-LAST:event_logoutMouseClicked
 
     private void createStudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createStudActionPerformed
@@ -270,6 +287,21 @@ public class administratorScreen extends javax.swing.JFrame {
         editableShowPanel(newContainer, 300, 0, 1050, 520);
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void editProfInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editProfInfoActionPerformed
+        adminPanels.editProfessorPanel newContainer = new adminPanels.editProfessorPanel();
+        editableShowPanel(newContainer, 300, 0, 1050, 520);
+    }//GEN-LAST:event_editProfInfoActionPerformed
+
+    private void editStudInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editStudInfoActionPerformed
+        adminPanels.editStudentPanel newContainer = new adminPanels.editStudentPanel();
+        editableShowPanel(newContainer, 300, 0, 1050, 520);
+    }//GEN-LAST:event_editStudInfoActionPerformed
+
+    private void editCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editCourseActionPerformed
+        adminPanels.editCoursePanel newContainer = new adminPanels.editCoursePanel();
+        editableShowPanel(newContainer, 300, 0, 1050, 520);
+    }//GEN-LAST:event_editCourseActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     javax.swing.JButton assignCourse;

@@ -116,24 +116,14 @@
         </Component>
         <Component class="javax.swing.JButton" name="coursesAssQuery">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Courses assigned query"/>
+            <Property name="text" type="java.lang.String" value="Courses and students assigned query"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="coursesAssQueryActionPerformed"/>
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="50" y="20" width="-1" height="-1"/>
-            </Constraint>
-          </Constraints>
-        </Component>
-        <Component class="javax.swing.JButton" name="studAssigCoursesQ">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="students assign to courses query"/>
-          </Properties>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="580" y="20" width="-1" height="-1"/>
+              <AbsoluteConstraints x="60" y="20" width="360" height="30"/>
             </Constraint>
           </Constraints>
         </Component>

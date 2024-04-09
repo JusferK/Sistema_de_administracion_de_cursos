@@ -31,6 +31,9 @@ public class studentScreen extends javax.swing.JFrame {
 
         basement.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        content.setMaximumSize(new java.awt.Dimension(1400, 510));
+        content.setMinimumSize(new java.awt.Dimension(1400, 510));
+
         javax.swing.GroupLayout contentLayout = new javax.swing.GroupLayout(content);
         content.setLayout(contentLayout);
         contentLayout.setHorizontalGroup(
@@ -42,17 +45,17 @@ public class studentScreen extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        basement.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 1200, 520));
+        basement.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1400, 510));
         content.setOpaque(false);
 
         myProfile.setText("My profile");
-        basement.add(myProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 600, -1, -1));
+        basement.add(myProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 650, -1, -1));
 
         coursesAssgQuery.setText("Courses assigned query");
         basement.add(coursesAssgQuery, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 180, -1));
 
         assgCourses.setText("Assign courses");
-        basement.add(assgCourses, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, -1, -1));
+        basement.add(assgCourses, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 20, -1, -1));
 
         unassgCourse.setText("Unassign course");
         unassgCourse.addActionListener(new java.awt.event.ActionListener() {
@@ -60,7 +63,7 @@ public class studentScreen extends javax.swing.JFrame {
                 unassgCourseActionPerformed(evt);
             }
         });
-        basement.add(unassgCourse, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 20, -1, -1));
+        basement.add(unassgCourse, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 20, -1, -1));
 
         logoutBtn.setText("log out");
         logoutBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -68,16 +71,16 @@ public class studentScreen extends javax.swing.JFrame {
                 logoutBtnMouseClicked(evt);
             }
         });
-        basement.add(logoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 600, -1, -1));
+        basement.add(logoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1290, 650, -1, -1));
 
         background.setIcon(new javax.swing.ImageIcon("/home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/images/background-login.jpg")); // NOI18N
-        basement.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 640));
+        basement.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1400, 700));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(basement, javax.swing.GroupLayout.DEFAULT_SIZE, 1202, Short.MAX_VALUE)
+            .addComponent(basement, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -110,10 +113,10 @@ public class studentScreen extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     public void showPanel(JPanel panel) {
-        panel.setSize(900, 320);
-        panel.setLocation(100, 0);
+        panel.setSize(1250, 560);
+        panel.setLocation(75, 0);
         panel.setOpaque(false);
-
+        
         content.removeAll();
         content.add(panel, BorderLayout.CENTER);
         content.revalidate();

@@ -25,7 +25,6 @@ public class professorScreen extends javax.swing.JFrame {
         myProfile = new javax.swing.JButton();
         logoutBtn = new javax.swing.JButton();
         coursesAssQuery = new javax.swing.JButton();
-        studAssigCoursesQ = new javax.swing.JButton();
         finalScore = new javax.swing.JButton();
         background = new javax.swing.JLabel();
 
@@ -71,16 +70,13 @@ public class professorScreen extends javax.swing.JFrame {
         });
         basement.add(logoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 650, -1, -1));
 
-        coursesAssQuery.setText("Courses assigned query");
+        coursesAssQuery.setText("Courses and students assigned query");
         coursesAssQuery.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 coursesAssQueryActionPerformed(evt);
             }
         });
-        basement.add(coursesAssQuery, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
-
-        studAssigCoursesQ.setText("students assign to courses query");
-        basement.add(studAssigCoursesQ, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 20, -1, -1));
+        basement.add(coursesAssQuery, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 360, 30));
 
         finalScore.setText("Enter final score");
         basement.add(finalScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 20, -1, -1));
@@ -126,7 +122,6 @@ public class professorScreen extends javax.swing.JFrame {
     javax.swing.JButton finalScore;
     javax.swing.JButton logoutBtn;
     javax.swing.JButton myProfile;
-    javax.swing.JButton studAssigCoursesQ;
     // End of variables declaration//GEN-END:variables
 
     public void showPanel(JPanel panel) {

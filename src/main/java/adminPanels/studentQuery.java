@@ -41,9 +41,10 @@ public class studentQuery extends javax.swing.JPanel {
 
             },
             new String [] {
-
+                "Title 1", "Title 2"
             }
         ));
+        studentQTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(studentQTable);
 
         basement.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 820, 400));

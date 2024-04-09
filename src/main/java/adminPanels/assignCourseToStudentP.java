@@ -247,6 +247,7 @@ public class assignCourseToStudentP extends javax.swing.JPanel {
     }
     
     public void setCoursesTableUp() {
+        
         coursesTable.setDefaultRenderer(Object.class, new Render());
         
         String [] columns = new String[]{"Select", "Course name", "Section", "start date", "finish date", "start hour", "finish hour", "course ID", "professor assigned"};
