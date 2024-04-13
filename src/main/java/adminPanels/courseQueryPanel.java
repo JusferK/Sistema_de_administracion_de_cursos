@@ -3,25 +3,10 @@ import javax.swing.table.DefaultTableModel;
 public class courseQueryPanel extends javax.swing.JPanel {
     
     public courseQueryPanel() {
+        
         initComponents();
         
-        DefaultTableModel coursesQueryTable = new DefaultTableModel(new String[]{"Course", "Professor", "Section", "Start date", "Finish date", "Start hour", "Finish hour", "course ID"}, com.mycompany.sistema_de_administracion.Sistema_De_Administracion.classList.size());
-        coursesQTable.setModel(coursesQueryTable);
-        
-        int rows = 0;
-        
-        for (com.mycompany.sistema_de_administracion.Class c : com.mycompany.sistema_de_administracion.Sistema_De_Administracion.classList) {
-            coursesQTable.setValueAt(c.courseName, rows, 0);
-            coursesQTable.setValueAt(c.professorAssigned, rows, 1);
-            coursesQTable.setValueAt(c.section, rows, 2);
-            coursesQTable.setValueAt(c.startDate, rows, 3);
-            coursesQTable.setValueAt(c.finishDate, rows, 4);
-            coursesQTable.setValueAt(c.startHour + ":00 " + c.startHourAmOrPm, rows, 5);
-            coursesQTable.setValueAt(c.finishHour + ":00 " + c.finishHourAmOrPm, rows, 6);
-            coursesQTable.setValueAt(c.ID, rows, 7);
-            rows++;
-        }
-        
+        setTableUp();
     }
     
     @SuppressWarnings("unchecked")
@@ -55,7 +40,7 @@ public class courseQueryPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(coursesQTable);
 
-        basement.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 930, 400));
+        basement.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 930, 400));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -78,4 +63,24 @@ public class courseQueryPanel extends javax.swing.JPanel {
     javax.swing.JScrollPane jScrollPane1;
     javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
+
+    public void setTableUp() {
+        DefaultTableModel coursesQueryTable = new DefaultTableModel(new String[]{"Course", "Professor", "Section", "Start date", "Finish date", "Start hour", "Finish hour", "course ID"}, com.mycompany.sistema_de_administracion.Sistema_De_Administracion.classList.size());
+        coursesQTable.setModel(coursesQueryTable);
+        
+        int rows = 0;
+        
+        for (com.mycompany.sistema_de_administracion.Class c : com.mycompany.sistema_de_administracion.Sistema_De_Administracion.classList) {
+            coursesQTable.setValueAt(c.courseName, rows, 0);
+            coursesQTable.setValueAt(c.professorAssigned, rows, 1);
+            coursesQTable.setValueAt(c.section, rows, 2);
+            coursesQTable.setValueAt(c.startDate, rows, 3);
+            coursesQTable.setValueAt(c.finishDate, rows, 4);
+            coursesQTable.setValueAt(c.startHour + ":00 " + c.startHourAmOrPm, rows, 5);
+            coursesQTable.setValueAt(c.finishHour + ":00 " + c.finishHourAmOrPm, rows, 6);
+            coursesQTable.setValueAt(c.ID, rows, 7);
+            rows++;
+        }
+    }
+
 }

@@ -19,20 +19,20 @@ public class welcomeScreenStudent extends javax.swing.JPanel {
 
         welcomeLabel.setFont(new java.awt.Font("Assistant ExtraBold", 0, 48)); // NOI18N
         welcomeLabel.setForeground(new java.awt.Color(255, 255, 255));
-        basement.add(welcomeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 820, 210));
+        basement.add(welcomeLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, 820, 210));
 
         adminIcon.setIcon(new javax.swing.ImageIcon("/home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/images/student-icon.png")); // NOI18N
-        basement.add(adminIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 180, 149, 140));
+        basement.add(adminIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 200, 149, 140));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(basement, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(basement, javax.swing.GroupLayout.DEFAULT_SIZE, 1200, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(basement, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(basement, javax.swing.GroupLayout.DEFAULT_SIZE, 560, Short.MAX_VALUE)
         );
 
         basement.setOpaque(false);

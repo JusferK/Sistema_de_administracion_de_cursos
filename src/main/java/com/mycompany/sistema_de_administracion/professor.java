@@ -41,4 +41,15 @@ public class professor extends administrator {
         
         return lookingForName;
     }
+    
+    public static String professorLastName(String user, String name) {
+        String lookingForLastName = null;
+        for(professor p : Sistema_De_Administracion.professorsList) {
+            if (p.user.equals(user) && p.name.equals(name)) {
+               lookingForLastName = p.lastName; 
+            }
+        }
+        
+        return lookingForLastName;
+    }
 }

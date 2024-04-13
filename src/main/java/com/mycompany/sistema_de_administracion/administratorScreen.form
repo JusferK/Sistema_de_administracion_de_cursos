@@ -205,7 +205,7 @@
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="1470" y="630" width="95" height="-1"/>
+              <AbsoluteConstraints x="1620" y="640" width="95" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -213,9 +213,12 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="My profile"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="myProfileActionPerformed"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="1360" y="630" width="-1" height="-1"/>
+              <AbsoluteConstraints x="1500" y="640" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>

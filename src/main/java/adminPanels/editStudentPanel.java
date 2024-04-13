@@ -142,7 +142,6 @@ public class editStudentPanel extends javax.swing.JPanel {
 
         boolean studentNameChange = changeVerification(globalStudentSelected.getStudentName(), inputFields[0]);
         boolean studentLastNameChange = changeVerification(globalStudentSelected.getStudentLastName(), inputFields[1]);
-        boolean studentIdNameChange = changeVerification(globalStudentSelected.getStudentID(), inputFields[2]);
         boolean studentPasswordChange = changeVerification(globalStudentSelected.password, inputFields[3]);
 
         if (studentNameChange) {
@@ -153,16 +152,12 @@ public class editStudentPanel extends javax.swing.JPanel {
             globalStudentSelected.setStudentLastName(inputFields[1]);
             JOptionPane.showMessageDialog(this, "Last name has been change");
         }
-        if (studentIdNameChange) {
-            globalStudentSelected.user = inputFields[2];
-            JOptionPane.showMessageDialog(this, "ID has been change");
-        }
         if (studentPasswordChange) {
             globalStudentSelected.password = inputFields[3];
             JOptionPane.showMessageDialog(this, "Password has been change");
         }
 
-        if (!studentNameChange && !studentLastNameChange && !studentIdNameChange && !studentPasswordChange) {
+        if (!studentNameChange && !studentLastNameChange && !studentPasswordChange) {
             JOptionPane.showMessageDialog(this, "No change was made");
         }
 
@@ -198,7 +193,6 @@ public class editStudentPanel extends javax.swing.JPanel {
     private void editBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editBtnActionPerformed
         studentNameField.setEditable(true);
         studentLastNameField.setEditable(true);
-        studentIDField.setEditable(true);
         studentPasswordField.setEnabled(true);
         saveBtn.setEnabled(true);
         editBtn.setEnabled(false);

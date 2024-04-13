@@ -62,4 +62,17 @@ public class student extends administrator {
         }
         return lookingForName;
     }
+    
+    public static student retreiveInfo(String name, String studentID) {
+        
+        student studentReturn = null;
+        
+        for (student sT : com.mycompany.sistema_de_administracion.Sistema_De_Administracion.studentList) {
+            if (name.equals(sT.getStudentName()) && studentID.equals(sT.getStudentID())) {
+                studentReturn = sT;
+            }
+        }
+        
+        return studentReturn;
+    }
 }

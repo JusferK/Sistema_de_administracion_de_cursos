@@ -4,13 +4,17 @@ import java.awt.BorderLayout;
 import javax.swing.JPanel;
 
 public class studentScreen extends javax.swing.JFrame {
+    
+    com.mycompany.sistema_de_administracion.student globalStudentInfo = null;
 
-    public studentScreen(String name) {
+    public studentScreen(String name, com.mycompany.sistema_de_administracion.student info) {
 
         initComponents();
 
         studentPanels.welcomeScreenStudent welcomeScreen = new studentPanels.welcomeScreenStudent(name);
-        showPanel(welcomeScreen);
+        showEditablePanel(welcomeScreen, 1200, 560, 100, 0);
+        
+        globalStudentInfo = info;
     }
 
     @SuppressWarnings("unchecked")
@@ -45,17 +49,32 @@ public class studentScreen extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        basement.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1400, 510));
+        basement.add(content, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 1410, 560));
         content.setOpaque(false);
 
         myProfile.setText("My profile");
-        basement.add(myProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 650, -1, -1));
+        myProfile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myProfileActionPerformed(evt);
+            }
+        });
+        basement.add(myProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(1210, 670, -1, -1));
 
         coursesAssgQuery.setText("Courses assigned query");
-        basement.add(coursesAssgQuery, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 180, -1));
+        coursesAssgQuery.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                coursesAssgQueryActionPerformed(evt);
+            }
+        });
+        basement.add(coursesAssgQuery, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 220, -1));
 
-        assgCourses.setText("Assign courses");
-        basement.add(assgCourses, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 20, -1, -1));
+        assgCourses.setText("Assign to courses");
+        assgCourses.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                assgCoursesActionPerformed(evt);
+            }
+        });
+        basement.add(assgCourses, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 20, 160, -1));
 
         unassgCourse.setText("Unassign course");
         unassgCourse.addActionListener(new java.awt.event.ActionListener() {
@@ -63,7 +82,7 @@ public class studentScreen extends javax.swing.JFrame {
                 unassgCourseActionPerformed(evt);
             }
         });
-        basement.add(unassgCourse, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 20, -1, -1));
+        basement.add(unassgCourse, new org.netbeans.lib.awtextra.AbsoluteConstraints(1230, 20, -1, -1));
 
         logoutBtn.setText("log out");
         logoutBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -71,10 +90,10 @@ public class studentScreen extends javax.swing.JFrame {
                 logoutBtnMouseClicked(evt);
             }
         });
-        basement.add(logoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1290, 650, -1, -1));
+        basement.add(logoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 670, -1, -1));
 
         background.setIcon(new javax.swing.ImageIcon("/home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/images/background-login.jpg")); // NOI18N
-        basement.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1400, 700));
+        basement.add(background, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1410, 720));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -97,8 +116,25 @@ public class studentScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_logoutBtnMouseClicked
 
     private void unassgCourseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_unassgCourseActionPerformed
-        // TODO add your handling code here:
+        studentPanels.unassignCoursesPanel newContainer = new studentPanels.unassignCoursesPanel(globalStudentInfo);
+        showEditablePanel(newContainer, 1200, 560, 100, 0);
     }//GEN-LAST:event_unassgCourseActionPerformed
+
+    private void coursesAssgQueryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_coursesAssgQueryActionPerformed
+        studentPanels.coursesAssignedStudentPanel newContainer = new studentPanels.coursesAssignedStudentPanel(globalStudentInfo);
+        showEditablePanel(newContainer, 1200, 560, 100, 0);
+    }//GEN-LAST:event_coursesAssgQueryActionPerformed
+
+    private void assgCoursesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_assgCoursesActionPerformed
+        studentPanels.assignToCoursePanel newContainer = new studentPanels.assignToCoursePanel(globalStudentInfo);
+        showEditablePanel(newContainer, 1200, 560, 200, 0);
+    }//GEN-LAST:event_assgCoursesActionPerformed
+
+    private void myProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myProfileActionPerformed
+        studentPanels.studentProfileFrame newFrame = new studentPanels.studentProfileFrame(globalStudentInfo);
+        newFrame.setVisible(true);
+        newFrame.setResizable(false);
+    }//GEN-LAST:event_myProfileActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -113,8 +149,19 @@ public class studentScreen extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     public void showPanel(JPanel panel) {
-        panel.setSize(1250, 560);
-        panel.setLocation(75, 0);
+        panel.setSize(1200, 560);
+        panel.setLocation(10, 0);
+        panel.setOpaque(false);
+        
+        content.removeAll();
+        content.add(panel, BorderLayout.CENTER);
+        content.revalidate();
+        content.repaint();
+    }
+    
+    public void showEditablePanel(JPanel panel, int width, int height, int x, int y) {
+        panel.setSize(width, height);
+        panel.setLocation(x, y);
         panel.setOpaque(false);
         
         content.removeAll();

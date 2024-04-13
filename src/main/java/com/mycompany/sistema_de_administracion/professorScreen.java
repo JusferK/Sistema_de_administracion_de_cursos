@@ -6,14 +6,17 @@ import javax.swing.JPanel;
 public class professorScreen extends javax.swing.JFrame {
 
     String userParameters = null;
+    String fullName = null;
     
-    public professorScreen(String name, String user) {
+    public professorScreen(String name, String user, String lastName) {
         initComponents();
         
         professorPanels.welcomeScreenProfessor welcomeScreen = new professorPanels.welcomeScreenProfessor(name);
         showPanel(welcomeScreen);
         
         userParameters = user;
+        fullName = name + " " + lastName;
+        
     }
     
     @SuppressWarnings("unchecked")
@@ -29,7 +32,6 @@ public class professorScreen extends javax.swing.JFrame {
         background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1200, 700));
         setMinimumSize(new java.awt.Dimension(1200, 700));
 
         basement.setMaximumSize(new java.awt.Dimension(1400, 700));
@@ -55,6 +57,11 @@ public class professorScreen extends javax.swing.JFrame {
         content.setOpaque(false);
 
         myProfile.setText("My profile");
+        myProfile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myProfileActionPerformed(evt);
+            }
+        });
         basement.add(myProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(1170, 650, -1, -1));
 
         logoutBtn.setText("log out");
@@ -112,6 +119,12 @@ public class professorScreen extends javax.swing.JFrame {
         professorPanels.coursesAssignedProfessorP newContainer = new professorPanels.coursesAssignedProfessorP(userParameters);
         showPanel(newContainer);
     }//GEN-LAST:event_coursesAssQueryActionPerformed
+
+    private void myProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myProfileActionPerformed
+        professorPanels.professorProfileFrame newFrame = new professorPanels.professorProfileFrame(fullName, userParameters);
+        newFrame.setVisible(true);
+        newFrame.setResizable(false);
+    }//GEN-LAST:event_myProfileActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

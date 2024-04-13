@@ -219,7 +219,6 @@ public class editCourseFrame extends javax.swing.JFrame {
         finishDateField.setEnabled(true);
         startHourField.setEnabled(true);
         finishHourField.setEnabled(true);
-        courseIDField.setEnabled(true);
         startHourCombo.setEnabled(true);
         finishHourCombo.setEnabled(true);
 
@@ -248,7 +247,6 @@ public class editCourseFrame extends javax.swing.JFrame {
         boolean finishDateChange = changeVerification(parameterCourseInfo.finishDate, inputFinishDateField);
         boolean startHourChange = changeVerification(String.valueOf(parameterCourseInfo.startHour), inputStartHourField);
         boolean finishHourChange = changeVerification(String.valueOf(parameterCourseInfo.finishHour), inputFinishHourField);
-        boolean courseIDChange = changeVerification(parameterCourseInfo.ID, inputCourseIDField);
         boolean startHourComboChange = changeVerification(parameterCourseInfo.startHourAmOrPm, inputStartHourCombo);
         boolean finishHourComboChange = changeVerification(parameterCourseInfo.finishHourAmOrPm, inputFinishHourCombo);
         
@@ -280,12 +278,8 @@ public class editCourseFrame extends javax.swing.JFrame {
             parameterCourseInfo.finishHour = Integer.parseInt(inputFinishHourField);
             JOptionPane.showMessageDialog(this, "Finish hour has been change");
         }
-        if (courseIDChange) {
-            parameterCourseInfo.ID = inputCourseIDField;
-            JOptionPane.showMessageDialog(this, "Course ID has been change");
-        } 
         
-        if (!nameChange && !professorChange && !sectionChange && !startDateChange && !finishDateChange && !startHourChange && !finishHourChange && !courseIDChange && !startHourComboChange && !finishHourComboChange) {
+        if (!nameChange && !professorChange && !sectionChange && !startDateChange && !finishDateChange && !startHourChange && !finishHourChange && !startHourComboChange && !finishHourComboChange) {
             JOptionPane.showMessageDialog(this, "No change has been made");
         }
         
@@ -338,7 +332,6 @@ public class editCourseFrame extends javax.swing.JFrame {
         finishDateField.setEnabled(false);
         startHourField.setEnabled(false);
         finishHourField.setEnabled(false);
-        courseIDField.setEnabled(false);
         startHourCombo.setEnabled(false);
         finishHourCombo.setEnabled(false);
         

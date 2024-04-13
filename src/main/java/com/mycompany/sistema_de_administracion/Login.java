@@ -146,11 +146,13 @@ public class Login extends javax.swing.JFrame {
             openScreen(adminScreen);
         } else if(professorMethodCall) {
             String name = professor.professorWelcomeName(inputFields[0]);
-            professorScreen profScreen = new professorScreen(name, inputFields[0]);
+            String lastName = professor.professorLastName(inputFields[0], name);
+            professorScreen profScreen = new professorScreen(name, inputFields[0], lastName);
             openScreen(profScreen);
         } else if(studentMethodCall) {
             String name = student.studentWelcomeName(inputFields[0]);
-            studentScreen studScreen = new studentScreen(name);
+            student studentInfo = student.retreiveInfo(name, inputFields[0]);
+            studentScreen studScreen = new studentScreen(name, studentInfo);
             openScreen(studScreen);
         } 
         if(!adminResult && !professorMethodCall && !studentMethodCall) {

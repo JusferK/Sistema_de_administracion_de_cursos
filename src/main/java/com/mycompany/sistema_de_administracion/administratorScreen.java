@@ -161,10 +161,15 @@ public class administratorScreen extends javax.swing.JFrame {
                 logoutActionPerformed(evt);
             }
         });
-        basement.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(1470, 630, 95, -1));
+        basement.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(1620, 640, 95, -1));
 
         myProfile.setText("My profile");
-        basement.add(myProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(1360, 630, -1, -1));
+        myProfile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myProfileActionPerformed(evt);
+            }
+        });
+        basement.add(myProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(1500, 640, -1, -1));
 
         massLoadProf.setText("Massive prof load");
         massLoadProf.addActionListener(new java.awt.event.ActionListener() {
@@ -302,6 +307,12 @@ public class administratorScreen extends javax.swing.JFrame {
         adminPanels.editCoursePanel newContainer = new adminPanels.editCoursePanel();
         editableShowPanel(newContainer, 300, 0, 1050, 520);
     }//GEN-LAST:event_editCourseActionPerformed
+
+    private void myProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myProfileActionPerformed
+        adminPanels.profileFrame newFrame = new adminPanels.profileFrame();
+        newFrame.setVisible(true);
+        newFrame.setResizable(false);
+    }//GEN-LAST:event_myProfileActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     javax.swing.JButton assignCourse;
