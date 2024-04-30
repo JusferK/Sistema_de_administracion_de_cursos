@@ -193,7 +193,7 @@ public class profileFrame extends javax.swing.JFrame {
         addressInput.setEnabled(false);
         
         nameInput.setText("Justine Fernando Arriaga Marroquin");
-        carneInput.setText("3190-22-21989");
+        carneInput.setText("3190-22-21898");
         addressInput.setText("Mariano Galvez de Guatemala, Centro de San Jose Pinula");
     }
     

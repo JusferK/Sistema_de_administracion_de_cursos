@@ -6,6 +6,7 @@ public class student extends administrator {
     private String studentName;
     private String studentLastName;
     public ArrayList<Class> coursesAssigned = new ArrayList<>();
+    public ArrayList<Integer> coursesFinalNote = new ArrayList<>();
     
     public student(String studentName, String studentLastName, String studentID, String password) {
         super(password);

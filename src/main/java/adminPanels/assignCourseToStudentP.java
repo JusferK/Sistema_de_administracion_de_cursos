@@ -35,13 +35,10 @@ public class assignCourseToStudentP extends javax.swing.JPanel {
 
         studentsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
         jScrollPane1.setViewportView(studentsTable);
@@ -50,13 +47,10 @@ public class assignCourseToStudentP extends javax.swing.JPanel {
 
         coursesTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
         jScrollPane2.setViewportView(coursesTable);
@@ -190,6 +184,7 @@ public class assignCourseToStudentP extends javax.swing.JPanel {
             for (com.mycompany.sistema_de_administracion.student s : studentTemporaryArrayList) {
                 for (com.mycompany.sistema_de_administracion.Class cL : classTemporaryArrayList) {
                     s.coursesAssigned.add(cL);
+                    s.coursesFinalNote.add(-1);
                 }
             }
             

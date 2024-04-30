@@ -107,6 +107,8 @@ public class assignToCoursePanel extends javax.swing.JPanel {
         if (globalStudentInfo.coursesAssigned.size() < 5 && predictingFuture && !securityBelt) {
             for(com.mycompany.sistema_de_administracion.Class cL : temporaryArralist) {
                     globalStudentInfo.coursesAssigned.add(cL);
+                    cL.studentAssignedList.add(globalStudentInfo);
+                    globalStudentInfo.coursesFinalNote.add(-1);
             }
             JOptionPane.showMessageDialog(this, "You assigned to " + checkCounter + " courses succesfully");
         } else if (bugControl) {

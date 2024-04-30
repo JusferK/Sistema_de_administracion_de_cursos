@@ -34,7 +34,7 @@ public static ArrayList<Class> classList = new ArrayList<>();
         Class newClass2 = new Class("2", "Derecho informativo", "A", "Lilia Altan", "01/02/2024", "31/06/2024", "AM", "AM", 9, 11);
         Class newClass3 = new Class("3", "Calculo I", "A", "Chrysta Aguilar", "01/02/2024", "31/06/2024", "AM", "PM", 11, 1);
         Class newClass4 = new Class("4", "Fisica I", "A", "Luis Garcia", "01/02/2024", "31/06/2024", "PM", "PM", 2, 4);
-        Class newClass5 = new Class("5", "Programacion", "A", "Carlos Davila", "01/02/2024", "31/06/2024", "PM", "PM", 4, 6);
+        Class newClass5 = new Class("5", "Programacion I", "A", "Carlos Davila", "01/02/2024", "31/06/2024", "PM", "PM", 4, 6);
         
         
         Login generalLogin = new Login();

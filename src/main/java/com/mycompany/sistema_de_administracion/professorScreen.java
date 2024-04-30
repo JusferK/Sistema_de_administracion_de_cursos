@@ -9,6 +9,7 @@ public class professorScreen extends javax.swing.JFrame {
     String fullName = null;
     
     public professorScreen(String name, String user, String lastName) {
+        
         initComponents();
         
         professorPanels.welcomeScreenProfessor welcomeScreen = new professorPanels.welcomeScreenProfessor(name);
@@ -86,6 +87,11 @@ public class professorScreen extends javax.swing.JFrame {
         basement.add(coursesAssQuery, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 360, 30));
 
         finalScore.setText("Enter final score");
+        finalScore.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                finalScoreActionPerformed(evt);
+            }
+        });
         basement.add(finalScore, new org.netbeans.lib.awtextra.AbsoluteConstraints(1240, 20, -1, -1));
 
         background.setIcon(new javax.swing.ImageIcon("/home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/images/background-login.jpg")); // NOI18N
@@ -125,6 +131,11 @@ public class professorScreen extends javax.swing.JFrame {
         newFrame.setVisible(true);
         newFrame.setResizable(false);
     }//GEN-LAST:event_myProfileActionPerformed
+
+    private void finalScoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finalScoreActionPerformed
+        professorPanels.finalNotesPanel newContainer = new professorPanels.finalNotesPanel(userParameters, fullName);
+        showPanel(newContainer);
+    }//GEN-LAST:event_finalScoreActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -92,6 +92,7 @@ public class unassignCoursesPanel extends javax.swing.JPanel {
                     rowIndexList.add(i);
                 }
             }
+            
         }
 
         if (checkCounter == 0) {
@@ -114,11 +115,14 @@ public class unassignCoursesPanel extends javax.swing.JPanel {
 
                     } else {
                         data.removeRow(j);
+                        globalStudentInfo.coursesFinalNote.remove(j);
+                        System.out.println(globalStudentInfo.coursesFinalNote);
                         holder++;
                         break;
                     }
                 }
             }
+            JOptionPane.showMessageDialog(this, "Unassignment was succesfull");
         }
         
 

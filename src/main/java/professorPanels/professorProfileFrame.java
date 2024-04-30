@@ -20,8 +20,9 @@ public class professorProfileFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel3 = new javax.swing.JPanel();
+        basement = new javax.swing.JPanel();
         exitBtn = new javax.swing.JButton();
+        changePasswordBtn = new javax.swing.JButton();
         nameInput = new javax.swing.JTextField();
         userInput = new javax.swing.JTextField();
         userLabel = new javax.swing.JLabel();
@@ -31,7 +32,7 @@ public class professorProfileFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        basement.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         exitBtn.setBackground(new java.awt.Color(3, 27, 59));
         exitBtn.setFont(new java.awt.Font("Assistant", 0, 11)); // NOI18N
@@ -48,7 +49,24 @@ public class professorProfileFrame extends javax.swing.JFrame {
                 exitBtnActionPerformed(evt);
             }
         });
-        jPanel3.add(exitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 440, 90, 40));
+        basement.add(exitBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 440, 90, 40));
+
+        changePasswordBtn.setBackground(new java.awt.Color(3, 27, 59));
+        changePasswordBtn.setFont(new java.awt.Font("Assistant", 0, 11)); // NOI18N
+        changePasswordBtn.setForeground(new java.awt.Color(255, 255, 255));
+        changePasswordBtn.setText("Change password");
+        changePasswordBtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        changePasswordBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                changePasswordBtnMouseClicked(evt);
+            }
+        });
+        changePasswordBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                changePasswordBtnActionPerformed(evt);
+            }
+        });
+        basement.add(changePasswordBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 430, 150, 40));
 
         nameInput.setBackground(new java.awt.Color(71, 108, 166));
         nameInput.setFont(new java.awt.Font("Assistant", 0, 11)); // NOI18N
@@ -66,7 +84,7 @@ public class professorProfileFrame extends javax.swing.JFrame {
                 nameInputActionPerformed(evt);
             }
         });
-        jPanel3.add(nameInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 440, 50));
+        basement.add(nameInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, 440, 50));
 
         userInput.setBackground(new java.awt.Color(71, 108, 166));
         userInput.setFont(new java.awt.Font("Assistant", 0, 11)); // NOI18N
@@ -84,30 +102,30 @@ public class professorProfileFrame extends javax.swing.JFrame {
                 userInputActionPerformed(evt);
             }
         });
-        jPanel3.add(userInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, 440, 50));
+        basement.add(userInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, 440, 50));
 
         userLabel.setIcon(new javax.swing.ImageIcon("/home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/images/carne-icon.png")); // NOI18N
-        jPanel3.add(userLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, -1, -1));
+        basement.add(userLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, -1, -1));
 
         nameLabel.setIcon(new javax.swing.ImageIcon("/home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/images/user_2.png")); // NOI18N
-        jPanel3.add(nameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, -1, -1));
+        basement.add(nameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, -1, -1));
 
         iconLabel.setIcon(new javax.swing.ImageIcon("/home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/images/user-icon.png")); // NOI18N
-        jPanel3.add(iconLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 90, 70));
+        basement.add(iconLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 90, 70));
 
         backgroundLabel.setBackground(new java.awt.Color(0, 0, 0));
         backgroundLabel.setIcon(new javax.swing.ImageIcon("/home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/images/background-login.jpg")); // NOI18N
-        jPanel3.add(backgroundLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
+        basement.add(backgroundLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(basement, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(basement, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -145,11 +163,22 @@ public class professorProfileFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_userInputActionPerformed
 
+    private void changePasswordBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_changePasswordBtnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_changePasswordBtnMouseClicked
+
+    private void changePasswordBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changePasswordBtnActionPerformed
+        changePasswordProfessorFrame newFrame = new changePasswordProfessorFrame(globalFullName, globalUser);
+        newFrame.setVisible(true);
+        newFrame.setResizable(false);
+    }//GEN-LAST:event_changePasswordBtnActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     javax.swing.JLabel backgroundLabel;
+    javax.swing.JPanel basement;
+    javax.swing.JButton changePasswordBtn;
     javax.swing.JButton exitBtn;
     javax.swing.JLabel iconLabel;
-    javax.swing.JPanel jPanel3;
     javax.swing.JTextField nameInput;
     javax.swing.JLabel nameLabel;
     javax.swing.JTextField userInput;
