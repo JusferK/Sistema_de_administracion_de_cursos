@@ -116,7 +116,7 @@ public class unassignCoursesPanel extends javax.swing.JPanel {
                     } else {
                         data.removeRow(j);
                         globalStudentInfo.coursesFinalNote.remove(j);
-                        System.out.println(globalStudentInfo.coursesFinalNote);
+                        removeStudentsFromCourseList(classFound, globalStudentInfo);
                         holder++;
                         break;
                     }
@@ -172,5 +172,20 @@ public class unassignCoursesPanel extends javax.swing.JPanel {
         }
         
         coursesTable.setModel(myModel);
+    }
+
+    public void removeStudentsFromCourseList(ArrayList<com.mycompany.sistema_de_administracion.Class> classesToRemove, com.mycompany.sistema_de_administracion.student studentToRemove) {
+        
+        for (com.mycompany.sistema_de_administracion.Class cL : classesToRemove) {
+            for (int i = 0; i < cL.studentAssignedList.size(); i++) {
+                
+                com.mycompany.sistema_de_administracion.student item = cL.studentAssignedList.get(i);
+                String fullName = item.getStudentName() + " " + item.getStudentLastName();
+                
+                if (fullName.equals(studentToRemove.getStudentName() + " " + studentToRemove.getStudentLastName()) && item.getStudentID().equals(studentToRemove.getStudentID())) {
+                    cL.studentAssignedList.remove(i);
+                }
+            }
+        }
     }
 }

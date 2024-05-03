@@ -15,7 +15,9 @@ public class assignToCoursePanel extends javax.swing.JPanel {
         
         globalStudentInfo = info;
         
-        setCoursesTableUp();
+        if (info.coursesAssigned.size() < 5) {
+            setCoursesTableUp();
+        }
         
     }
 

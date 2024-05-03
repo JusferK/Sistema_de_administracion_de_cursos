@@ -173,18 +173,28 @@ public class assignCourseToStudentP extends javax.swing.JPanel {
         
         boolean securityBelt = limitVerification(studentSelectedCounter, coursesSelectedCounter);
         
-        if (securityBelt) {
+        if (securityBelt && studentSelectedCounter != 0 && coursesSelectedCounter != 0) {
             
             for (com.mycompany.sistema_de_administracion.Class cl : classTemporaryArrayList) {
                 for (com.mycompany.sistema_de_administracion.student s : studentTemporaryArrayList) {
-                    cl.studentAssignedList.add(s);   
+                    if (cl.studentAssignedList.size() < 10) {
+                        cl.studentAssignedList.add(s);
+                    } else {
+                        JOptionPane.showMessageDialog(this, cl.courseName + " has reached the limit of students assigned");
+                        break;
+                    }
                 }
             }
             
             for (com.mycompany.sistema_de_administracion.student s : studentTemporaryArrayList) {
                 for (com.mycompany.sistema_de_administracion.Class cL : classTemporaryArrayList) {
-                    s.coursesAssigned.add(cL);
-                    s.coursesFinalNote.add(-1);
+                    if (s.coursesAssigned.size() < 5) {
+                        s.coursesAssigned.add(cL);
+                        s.coursesFinalNote.add(-1);
+                    } else {
+                        JOptionPane.showMessageDialog(this, s.getStudentName() + " has reach the limit of courses assigned");
+                        break;
+                    }
                 }
             }
             
@@ -230,12 +240,14 @@ public class assignCourseToStudentP extends javax.swing.JPanel {
         Object[] data = new Object[columns.length];
         
         for (com.mycompany.sistema_de_administracion.student sL : com.mycompany.sistema_de_administracion.Sistema_De_Administracion.studentList) {
-            data[0] = false;
-            data[1] = String.valueOf(sL.getStudentName());
-            data[2] = String.valueOf(sL.getStudentLastName());
-            data[3] = String.valueOf(sL.getStudentID());
-            
-            myModel.addRow(data);
+            if (sL.coursesAssigned.size() < 5) {
+                data[0] = false;
+                data[1] = String.valueOf(sL.getStudentName());
+                data[2] = String.valueOf(sL.getStudentLastName());
+                data[3] = String.valueOf(sL.getStudentID());
+
+                myModel.addRow(data);
+            }
         }
         
         studentsTable.setModel(myModel);
@@ -262,17 +274,19 @@ public class assignCourseToStudentP extends javax.swing.JPanel {
         Object[] data = new Object[columns.length];
         
         for (com.mycompany.sistema_de_administracion.Class cl : com.mycompany.sistema_de_administracion.Sistema_De_Administracion.classList) {
-            data[0] = false;
-            data[1] = String.valueOf(cl.courseName);
-            data[2] = String.valueOf(cl.section);
-            data[3] = String.valueOf(cl.startDate);
-            data[4] = String.valueOf(cl.finishDate);
-            data[5] = String.valueOf(cl.startHour + ":00 " + cl.startHourAmOrPm);
-            data[6] = String.valueOf(cl.finishHour + ":00 " + cl.finishHourAmOrPm);
-            data[7] = String.valueOf(cl.ID);
-            data[8] = String.valueOf(cl.professorAssigned); 
-            
-            myModel.addRow(data);
+            if (cl.studentAssignedList.size() < 10) {
+                data[0] = false;
+                data[1] = String.valueOf(cl.courseName);
+                data[2] = String.valueOf(cl.section);
+                data[3] = String.valueOf(cl.startDate);
+                data[4] = String.valueOf(cl.finishDate);
+                data[5] = String.valueOf(cl.startHour + ":00 " + cl.startHourAmOrPm);
+                data[6] = String.valueOf(cl.finishHour + ":00 " + cl.finishHourAmOrPm);
+                data[7] = String.valueOf(cl.ID);
+                data[8] = String.valueOf(cl.professorAssigned); 
+
+                myModel.addRow(data);
+            }
         }
         
         coursesTable.setModel(myModel);
