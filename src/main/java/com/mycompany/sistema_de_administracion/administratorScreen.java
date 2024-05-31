@@ -226,15 +226,18 @@ public class administratorScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_assignCourseActionPerformed
 
     private void massLoadProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_massLoadProfActionPerformed
-        // TODO add your handling code here:
+        adminPanels.massiveLoadsProfessor newContainer = new adminPanels.massiveLoadsProfessor();
+        editableShowPanel(newContainer, 300, 0, 1050, 520);
     }//GEN-LAST:event_massLoadProfActionPerformed
 
     private void massLoadStudActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_massLoadStudActionPerformed
-        // TODO add your handling code here:
+        adminPanels.massiveLoadsStudentP newContainer = new adminPanels.massiveLoadsStudentP();
+        editableShowPanel(newContainer, 300, 0, 1050, 520);
     }//GEN-LAST:event_massLoadStudActionPerformed
 
     private void massLoadStud1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_massLoadStud1ActionPerformed
-        // TODO add your handling code here:
+        adminPanels.massiveLoadsClassP newContainer = new adminPanels.massiveLoadsClassP();
+        editableShowPanel(newContainer, 300, 0, 1050, 520);
     }//GEN-LAST:event_massLoadStud1ActionPerformed
 
     private void createProfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createProfActionPerformed

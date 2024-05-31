@@ -6,13 +6,13 @@ public class coursesAssignedProfessorP extends javax.swing.JPanel {
     
     ArrayList<com.mycompany.sistema_de_administracion.Class> coursesArray = null;
     
-    public coursesAssignedProfessorP(String user) {
+    public coursesAssignedProfessorP(com.mycompany.sistema_de_administracion.professor info) {
         
         initComponents();
         
         ArrayList<com.mycompany.sistema_de_administracion.Class> temporaryArray = new ArrayList<>();
         
-        setCoursesTableUp(user, temporaryArray);
+        setCoursesTableUp(info, temporaryArray);
         setComboBox(temporaryArray);
         
         coursesArray = temporaryArray;
@@ -130,20 +130,16 @@ public class coursesAssignedProfessorP extends javax.swing.JPanel {
     javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
 
-    public void setCoursesTableUp(String user, ArrayList<com.mycompany.sistema_de_administracion.Class> temporaryArray) {
-        
-        for (com.mycompany.sistema_de_administracion.professor p : com.mycompany.sistema_de_administracion.Sistema_De_Administracion.professorsList) {
-            if (user.equals(p.user)) {
+    public void setCoursesTableUp(com.mycompany.sistema_de_administracion.professor info, ArrayList<com.mycompany.sistema_de_administracion.Class> temporaryArray) {
                 
-                String professorName = p.getName() + " " + p.lastName;
-                
-                for (com.mycompany.sistema_de_administracion.Class cL : com.mycompany.sistema_de_administracion.Sistema_De_Administracion.classList) {
-                    if (professorName.equals(cL.professorAssigned)) {
-                        temporaryArray.add(cL);
-                    }
-                }
+        String professorName = info.getName() + " " + info.lastName;
+
+        for (com.mycompany.sistema_de_administracion.Class cL : com.mycompany.sistema_de_administracion.Sistema_De_Administracion.classList) {
+            if (professorName.equals(cL.professorAssigned)) {
+                temporaryArray.add(cL);
             }
         }
+        
         
         DefaultTableModel coursesQueryTable = new DefaultTableModel(new String[]{"Course", "Professor", "Section", "Start date", "Finish date", "Start hour", "Finish hour", "course ID"}, temporaryArray.size());
         coursesTable.setModel(coursesQueryTable);

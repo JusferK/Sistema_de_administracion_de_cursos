@@ -4,20 +4,16 @@ import javax.swing.JPanel;
 
 
 public class professorScreen extends javax.swing.JFrame {
-
-    String userParameters = null;
-    String fullName = null;
     
-    public professorScreen(String name, String user, String lastName) {
+    professor globalInfo = null;
+    
+    public professorScreen(professor info) {
         
         initComponents();
         
-        professorPanels.welcomeScreenProfessor welcomeScreen = new professorPanels.welcomeScreenProfessor(name);
+        professorPanels.welcomeScreenProfessor welcomeScreen = new professorPanels.welcomeScreenProfessor(info);
         showPanel(welcomeScreen);
-        
-        userParameters = user;
-        fullName = name + " " + lastName;
-        
+        globalInfo = info;
     }
     
     @SuppressWarnings("unchecked")
@@ -122,18 +118,18 @@ public class professorScreen extends javax.swing.JFrame {
     }//GEN-LAST:event_logoutBtnActionPerformed
 
     private void coursesAssQueryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_coursesAssQueryActionPerformed
-        professorPanels.coursesAssignedProfessorP newContainer = new professorPanels.coursesAssignedProfessorP(userParameters);
+        professorPanels.coursesAssignedProfessorP newContainer = new professorPanels.coursesAssignedProfessorP(globalInfo);
         showPanel(newContainer);
     }//GEN-LAST:event_coursesAssQueryActionPerformed
 
     private void myProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myProfileActionPerformed
-        professorPanels.professorProfileFrame newFrame = new professorPanels.professorProfileFrame(fullName, userParameters);
+        professorPanels.professorProfileFrame newFrame = new professorPanels.professorProfileFrame(globalInfo);
         newFrame.setVisible(true);
         newFrame.setResizable(false);
     }//GEN-LAST:event_myProfileActionPerformed
 
     private void finalScoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_finalScoreActionPerformed
-        professorPanels.finalNotesPanel newContainer = new professorPanels.finalNotesPanel(userParameters, fullName);
+        professorPanels.finalNotesPanel newContainer = new professorPanels.finalNotesPanel(globalInfo);
         showPanel(newContainer);
     }//GEN-LAST:event_finalScoreActionPerformed
 

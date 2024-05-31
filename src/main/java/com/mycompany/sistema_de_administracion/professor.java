@@ -3,6 +3,7 @@ public class professor extends administrator {
     
     private String name;
     public String lastName;
+    public String speciallity;
 
     public String getName() {
         return name;
@@ -12,10 +13,11 @@ public class professor extends administrator {
         this.name = name;
     }
     
-    public professor(String name, String lastName, String user, String password) {
+    public professor(String name, String lastName, String user, String password, String speciallity) {
         super(user, password);
         this.name = name;
         this.lastName = lastName;
+        this.speciallity = speciallity;
     }
     
     public static boolean professorLogin(String userField, String passwordField) {

@@ -38,5 +38,6 @@ public class administrator {
         currentScreen.dispose();
         Login newLogin = new Login();
         newLogin.setVisible(true);
+        newLogin.setResizable(false);
     }
 }

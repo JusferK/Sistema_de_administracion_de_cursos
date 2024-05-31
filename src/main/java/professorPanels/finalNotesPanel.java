@@ -8,14 +8,17 @@ public class finalNotesPanel extends javax.swing.JPanel {
     
     ArrayList<com.mycompany.sistema_de_administracion.Class> coursesArray = null;
     com.mycompany.sistema_de_administracion.Class auxiliar = null;
+    com.mycompany.sistema_de_administracion.professor globalInfo = null;
     
-    public finalNotesPanel(String userParameters, String fullName) {
+    public finalNotesPanel(com.mycompany.sistema_de_administracion.professor info) {
     
         initComponents();
         
         ArrayList<com.mycompany.sistema_de_administracion.Class> temporaryArray = new ArrayList<>();
         
-        setCoursesTableUp(userParameters, temporaryArray);
+        globalInfo = info;
+        
+        setCoursesTableUp(info, temporaryArray);
         
         coursesArray = temporaryArray;
     }
@@ -106,12 +109,17 @@ public class finalNotesPanel extends javax.swing.JPanel {
 
         ArrayList<com.mycompany.sistema_de_administracion.Class> temporaryClassList = new ArrayList<>();
         
+        int checkCounter = 0;
         
         for (int i = 0; i < coursesAssignedTable.getRowCount(); i++) {
 
             String checked =  String.valueOf(coursesAssignedTable.getValueAt(i, 0));
             String courseName = String.valueOf(coursesAssignedTable.getValueAt(i, 1));
             String courseID = String.valueOf(coursesAssignedTable.getValueAt(i, 7));
+            
+            if (checked.equalsIgnoreCase("true")) {
+                checkCounter++;
+            }
             
             for (com.mycompany.sistema_de_administracion.Class cL : com.mycompany.sistema_de_administracion.Sistema_De_Administracion.classList) {
                 if (checked.equalsIgnoreCase("true") && courseName.equals(cL.courseName) && courseID.equals(cL.ID)) {
@@ -120,20 +128,24 @@ public class finalNotesPanel extends javax.swing.JPanel {
             }
         }
         
-        int temporaryListSize = temporaryClassList.size();
+        if (checkCounter != 0 && checkCounter < 2) {
+            int temporaryListSize = temporaryClassList.size();
         
-        if (temporaryListSize == 1) {
-            com.mycompany.sistema_de_administracion.Class item = temporaryClassList.get(0);
-            setStudentsTableUp(item);
-        } else if(temporaryListSize > 1) {
-            JOptionPane.showMessageDialog(this, "Only one course can be selected at a time.");
-        } else if (temporaryListSize == 0) {
-            JOptionPane.showMessageDialog(this, "Please, select at least one course to show students.");
+            if (temporaryListSize == 1) {
+                com.mycompany.sistema_de_administracion.Class item = temporaryClassList.get(0);
+                setStudentsTableUp(item);
+            } else if(temporaryListSize > 1) {
+                JOptionPane.showMessageDialog(this, "Only one course can be selected at a time.");
+            } else if (temporaryListSize == 0) {
+                JOptionPane.showMessageDialog(this, "Please, select at least one course to show students.");
+            }
+
+            auxiliar = temporaryClassList.get(0);
+
+            selectCourseBtn.setEnabled(false);
+        } else {
+            JOptionPane.showMessageDialog(this, "Only one course can be selected at a time");
         }
-        
-        auxiliar = temporaryClassList.get(0);
-        
-        selectCourseBtn.setEnabled(false);
     }//GEN-LAST:event_selectCourseBtnActionPerformed
 
     private void selectStudentBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectStudentBtnActionPerformed
@@ -200,7 +212,7 @@ public class finalNotesPanel extends javax.swing.JPanel {
     javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
 
-    public void setCoursesTableUp(String user, ArrayList<com.mycompany.sistema_de_administracion.Class> temporaryArray) {
+    public void setCoursesTableUp(com.mycompany.sistema_de_administracion.professor info, ArrayList<com.mycompany.sistema_de_administracion.Class> temporaryArray) {
         
         coursesAssignedTable.setDefaultRenderer(Object.class, new Render());
 
@@ -220,16 +232,11 @@ public class finalNotesPanel extends javax.swing.JPanel {
 
         Object[] data = new Object[columns.length];
         
-        for (com.mycompany.sistema_de_administracion.professor p : com.mycompany.sistema_de_administracion.Sistema_De_Administracion.professorsList) {
-            if (user.equals(p.user)) {
+        String professorName = info.getName() + " " + info.lastName;
                 
-                String professorName = p.getName() + " " + p.lastName;
-                
-                for (com.mycompany.sistema_de_administracion.Class cL : com.mycompany.sistema_de_administracion.Sistema_De_Administracion.classList) {
-                    if (professorName.equals(cL.professorAssigned)) {
-                        temporaryArray.add(cL);
-                    }
-                }
+        for (com.mycompany.sistema_de_administracion.Class cL : com.mycompany.sistema_de_administracion.Sistema_De_Administracion.classList) {
+            if (professorName.equals(cL.professorAssigned)) {
+                temporaryArray.add(cL);
             }
         }
         

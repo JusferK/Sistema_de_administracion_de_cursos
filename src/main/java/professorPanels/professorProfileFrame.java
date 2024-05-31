@@ -1,17 +1,14 @@
 package professorPanels;
 
 public class professorProfileFrame extends javax.swing.JFrame {
-
-    String globalFullName = null;
-    String globalUser = null;
     
-    public professorProfileFrame(String fullName, String user) {
+    com.mycompany.sistema_de_administracion.professor globaInfo = null;
+    
+    public professorProfileFrame(com.mycompany.sistema_de_administracion.professor info) {
         
         initComponents();
         
-        globalFullName = fullName;
-        globalUser = user;
-        
+        globaInfo = info;
         
         setInfoUp();
     }
@@ -25,7 +22,9 @@ public class professorProfileFrame extends javax.swing.JFrame {
         changePasswordBtn = new javax.swing.JButton();
         nameInput = new javax.swing.JTextField();
         userInput = new javax.swing.JTextField();
-        userLabel = new javax.swing.JLabel();
+        speciallityField = new javax.swing.JTextField();
+        userLabel1 = new javax.swing.JLabel();
+        speciallityLabel = new javax.swing.JLabel();
         nameLabel = new javax.swing.JLabel();
         iconLabel = new javax.swing.JLabel();
         backgroundLabel = new javax.swing.JLabel();
@@ -104,8 +103,29 @@ public class professorProfileFrame extends javax.swing.JFrame {
         });
         basement.add(userInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, 440, 50));
 
-        userLabel.setIcon(new javax.swing.ImageIcon("/home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/images/carne-icon.png")); // NOI18N
-        basement.add(userLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, -1, -1));
+        speciallityField.setBackground(new java.awt.Color(71, 108, 166));
+        speciallityField.setFont(new java.awt.Font("Assistant", 0, 11)); // NOI18N
+        speciallityField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        speciallityField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                speciallityFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                speciallityFieldFocusLost(evt);
+            }
+        });
+        speciallityField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                speciallityFieldActionPerformed(evt);
+            }
+        });
+        basement.add(speciallityField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 310, 440, 50));
+
+        userLabel1.setIcon(new javax.swing.ImageIcon("/home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/images/carne-icon.png")); // NOI18N
+        basement.add(userLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, -1, -1));
+
+        speciallityLabel.setIcon(new javax.swing.ImageIcon("/home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/images/carne-icon.png")); // NOI18N
+        basement.add(speciallityLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, -1, -1));
 
         nameLabel.setIcon(new javax.swing.ImageIcon("/home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/images/user_2.png")); // NOI18N
         basement.add(nameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 190, -1, -1));
@@ -168,10 +188,22 @@ public class professorProfileFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_changePasswordBtnMouseClicked
 
     private void changePasswordBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changePasswordBtnActionPerformed
-        changePasswordProfessorFrame newFrame = new changePasswordProfessorFrame(globalFullName, globalUser);
+        changePasswordProfessorFrame newFrame = new changePasswordProfessorFrame(globaInfo);
         newFrame.setVisible(true);
         newFrame.setResizable(false);
     }//GEN-LAST:event_changePasswordBtnActionPerformed
+
+    private void speciallityFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_speciallityFieldFocusGained
+        // TODO add your handling code here:
+    }//GEN-LAST:event_speciallityFieldFocusGained
+
+    private void speciallityFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_speciallityFieldFocusLost
+        // TODO add your handling code here:
+    }//GEN-LAST:event_speciallityFieldFocusLost
+
+    private void speciallityFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_speciallityFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_speciallityFieldActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     javax.swing.JLabel backgroundLabel;
@@ -181,16 +213,20 @@ public class professorProfileFrame extends javax.swing.JFrame {
     javax.swing.JLabel iconLabel;
     javax.swing.JTextField nameInput;
     javax.swing.JLabel nameLabel;
+    javax.swing.JTextField speciallityField;
+    javax.swing.JLabel speciallityLabel;
     javax.swing.JTextField userInput;
-    javax.swing.JLabel userLabel;
+    javax.swing.JLabel userLabel1;
     // End of variables declaration//GEN-END:variables
 
     public void setInfoUp() {
         nameInput.setEnabled(false);
         userInput.setEnabled(false);
+        speciallityField.setEnabled(false);
         
-        nameInput.setText(globalFullName);
-        userInput.setText(globalUser);
+        nameInput.setText(globaInfo.getName() + " " + globaInfo.lastName);
+        userInput.setText(globaInfo.user);
+        speciallityField.setText(globaInfo.speciallity);
     }
 
 }

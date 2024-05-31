@@ -4,13 +4,13 @@ import javax.swing.JOptionPane;
 
 public class changePasswordProfessorFrame extends javax.swing.JFrame {
 
-    com.mycompany.sistema_de_administracion.professor globalProfessorSelected = null;
+    com.mycompany.sistema_de_administracion.professor globalInfo = null;
     
-    public changePasswordProfessorFrame(String fullName, String user) {
+    public changePasswordProfessorFrame(com.mycompany.sistema_de_administracion.professor info) {
 
         initComponents();
         
-        setPasswordUp(fullName, user);
+        setPasswordUp(info);
     }
 
     @SuppressWarnings("unchecked")
@@ -134,12 +134,12 @@ public class changePasswordProfessorFrame extends javax.swing.JFrame {
         String regex = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?]).{8,}$";
         String passwordChange = passwordInput.getText();
         
-        if (globalProfessorSelected.password.equals(passwordChange)) {
+        if (globalInfo.password.equals(passwordChange)) {
             JOptionPane.showMessageDialog(this, "No change was made");
             changeBtn.setEnabled(false);
             passwordInput.setEnabled(false);
         } else if (passwordChange.matches(regex)) {
-            globalProfessorSelected.password = passwordChange;
+            globalInfo.password = passwordChange;
             JOptionPane.showMessageDialog(this, "Password was successfully changed");
             changeBtn.setEnabled(false);
             passwordInput.setEnabled(false);
@@ -193,22 +193,8 @@ public class changePasswordProfessorFrame extends javax.swing.JFrame {
     javax.swing.JLabel title;
     // End of variables declaration//GEN-END:variables
 
-    public void setPasswordUp(String name, String user) {
-        
-        com.mycompany.sistema_de_administracion.professor professorWorkingWith = null;
-        
-        for (com.mycompany.sistema_de_administracion.professor pF : com.mycompany.sistema_de_administracion.Sistema_De_Administracion.professorsList) {
-            
-            String fullName = pF.getName() + " " + pF.lastName;
-            
-            if (fullName.equals(name) && pF.user.equals(user)) {
-                professorWorkingWith = pF;
-            }
-        }
-        
-        globalProfessorSelected = professorWorkingWith;
-        
-        passwordInput.setText(professorWorkingWith.password);
+    public void setPasswordUp(com.mycompany.sistema_de_administracion.professor info) {
+        passwordInput.setText(info.password);
         changeBtn.setEnabled(false);
         passwordInput.setEnabled(false);
     }

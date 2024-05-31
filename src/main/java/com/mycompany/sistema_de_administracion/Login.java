@@ -145,9 +145,8 @@ public class Login extends javax.swing.JFrame {
             administratorScreen adminScreen = new administratorScreen();
             openScreen(adminScreen);
         } else if(professorMethodCall) {
-            String name = professor.professorWelcomeName(inputFields[0]);
-            String lastName = professor.professorLastName(inputFields[0], name);
-            professorScreen profScreen = new professorScreen(name, inputFields[0], lastName);
+            professor professorSending = speciallity(inputFields[0], inputFields[1]);
+            professorScreen profScreen = new professorScreen(professorSending);
             openScreen(profScreen);
         } else if(studentMethodCall) {
             String name = student.studentWelcomeName(inputFields[0]);
@@ -215,5 +214,18 @@ public class Login extends javax.swing.JFrame {
             roleScreen.setResizable(false);
             this.dispose();
             JOptionPane.showMessageDialog(this, "Login succesful!");
+    }
+    
+    public professor speciallity(String user, String password) {
+        
+        professor professorNull = null; 
+        
+        for (professor p : Sistema_De_Administracion.professorsList) {
+            if (p.user.equals(user) && p.password.equals(password)) {
+                professorNull = p;
+            }
+        }
+        
+        return professorNull;
     }
 }

@@ -18,10 +18,12 @@ public class createProfP extends javax.swing.JPanel {
         lastNameLabel = new java.awt.Label();
         userLabel = new java.awt.Label();
         passwordLabel = new java.awt.Label();
+        passwordLabel1 = new java.awt.Label();
         nameField = new javax.swing.JTextField();
         lastNameField = new javax.swing.JTextField();
         userField = new javax.swing.JTextField();
         passwordField = new javax.swing.JTextField();
+        speciallityTextField = new javax.swing.JTextField();
         saveBtn = new javax.swing.JButton();
         instructions = new javax.swing.JLabel();
 
@@ -29,33 +31,46 @@ public class createProfP extends javax.swing.JPanel {
 
         basement.setForeground(new java.awt.Color(255, 255, 255));
         basement.setPreferredSize(new java.awt.Dimension(1500, 540));
+        basement.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         title.setFont(new java.awt.Font("Assistant ExtraBold", 0, 36)); // NOI18N
         title.setForeground(new java.awt.Color(255, 255, 255));
         title.setText("Add a new professor");
+        basement.add(title, new org.netbeans.lib.awtextra.AbsoluteConstraints(384, 23, 330, 90));
 
         nameLabel1.setAlignment(java.awt.Label.CENTER);
         nameLabel1.setBackground(new java.awt.Color(3, 27, 59));
         nameLabel1.setForeground(new java.awt.Color(255, 255, 255));
         nameLabel1.setText("Name");
+        basement.add(nameLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, 90, 40));
 
         lastNameLabel.setAlignment(java.awt.Label.CENTER);
         lastNameLabel.setBackground(new java.awt.Color(3, 27, 59));
         lastNameLabel.setForeground(new java.awt.Color(255, 255, 255));
         lastNameLabel.setText("Last name");
+        basement.add(lastNameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 90, 40));
 
         userLabel.setAlignment(java.awt.Label.CENTER);
         userLabel.setBackground(new java.awt.Color(3, 27, 59));
         userLabel.setForeground(new java.awt.Color(255, 255, 255));
         userLabel.setText("User");
+        basement.add(userLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, 90, 40));
 
         passwordLabel.setAlignment(java.awt.Label.CENTER);
         passwordLabel.setBackground(new java.awt.Color(3, 27, 59));
         passwordLabel.setForeground(new java.awt.Color(255, 255, 255));
         passwordLabel.setText("Password");
+        basement.add(passwordLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, 90, 40));
+
+        passwordLabel1.setAlignment(java.awt.Label.CENTER);
+        passwordLabel1.setBackground(new java.awt.Color(3, 27, 59));
+        passwordLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        passwordLabel1.setText("Speciallity");
+        basement.add(passwordLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 380, 90, 40));
 
         nameField.setBackground(new java.awt.Color(71, 108, 166));
         nameField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        basement.add(nameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, 240, 40));
 
         lastNameField.setBackground(new java.awt.Color(71, 108, 166));
         lastNameField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -64,12 +79,19 @@ public class createProfP extends javax.swing.JPanel {
                 lastNameFieldActionPerformed(evt);
             }
         });
+        basement.add(lastNameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 230, 240, 40));
 
         userField.setBackground(new java.awt.Color(71, 108, 166));
         userField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        basement.add(userField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 280, 240, 40));
 
         passwordField.setBackground(new java.awt.Color(71, 108, 166));
         passwordField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        basement.add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 330, 240, 40));
+
+        speciallityTextField.setBackground(new java.awt.Color(71, 108, 166));
+        speciallityTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        basement.add(speciallityTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 380, 240, 40));
 
         saveBtn.setBackground(new java.awt.Color(3, 27, 59));
         saveBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -79,6 +101,7 @@ public class createProfP extends javax.swing.JPanel {
                 saveBtnActionPerformed(evt);
             }
         });
+        basement.add(saveBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 449, 140, 50));
 
         instructions.setFont(new java.awt.Font("Assistant", 0, 14)); // NOI18N
         instructions.setForeground(new java.awt.Color(255, 255, 255));
@@ -87,69 +110,7 @@ public class createProfP extends javax.swing.JPanel {
         instructions.setToolTipText("");
         instructions.setAlignmentX(0.5F);
         instructions.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        javax.swing.GroupLayout basementLayout = new javax.swing.GroupLayout(basement);
-        basement.setLayout(basementLayout);
-        basementLayout.setHorizontalGroup(
-            basementLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(basementLayout.createSequentialGroup()
-                .addGap(230, 230, 230)
-                .addGroup(basementLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(basementLayout.createSequentialGroup()
-                        .addComponent(nameLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(basementLayout.createSequentialGroup()
-                        .addComponent(lastNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(lastNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(basementLayout.createSequentialGroup()
-                        .addComponent(userLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(userField, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(basementLayout.createSequentialGroup()
-                        .addComponent(passwordLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(saveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(instructions, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43))
-            .addGroup(basementLayout.createSequentialGroup()
-                .addGap(0, 384, Short.MAX_VALUE)
-                .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(336, 336, 336))
-        );
-        basementLayout.setVerticalGroup(
-            basementLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(basementLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(basementLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(basementLayout.createSequentialGroup()
-                        .addGap(67, 67, 67)
-                        .addGroup(basementLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(nameLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(nameField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(10, 10, 10)
-                        .addGroup(basementLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lastNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lastNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(10, 10, 10)
-                        .addGroup(basementLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(userLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(userField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(10, 10, 10)
-                        .addGroup(basementLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(passwordLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(saveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(basementLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(instructions, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(93, Short.MAX_VALUE))
-        );
+        basement.add(instructions, new org.netbeans.lib.awtextra.AbsoluteConstraints(612, 131, 395, 336));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -176,9 +137,10 @@ public class createProfP extends javax.swing.JPanel {
         String lastName = lastNameField.getText();
         String userName = userField.getText();
         String password = passwordField.getText();
+        String speciallityField = speciallityTextField.getText();
         
         if(name.matches(Regexes[0]) && lastName.matches(Regexes[0]) && userName.matches(Regexes[1]) && password.matches(Regexes[2])) {
-            com.mycompany.sistema_de_administracion.professor newProfessor = new com.mycompany.sistema_de_administracion.professor(name, lastName, userName, password);
+            com.mycompany.sistema_de_administracion.professor newProfessor = new com.mycompany.sistema_de_administracion.professor(name, lastName, userName, password, speciallityField);
             com.mycompany.sistema_de_administracion.Sistema_De_Administracion.professorsList.add(newProfessor);
         
             JOptionPane.showMessageDialog(this, "Professor was created succesfully!");
@@ -186,6 +148,7 @@ public class createProfP extends javax.swing.JPanel {
             lastNameField.setText("");
             userField.setText("");
             passwordField.setText("");
+            speciallityTextField.setText("");
         } else {
             JOptionPane.showMessageDialog(this, "Make sure the all fields contains the parameters needed!");
         }
@@ -201,7 +164,9 @@ public class createProfP extends javax.swing.JPanel {
     java.awt.Label nameLabel1;
     javax.swing.JTextField passwordField;
     java.awt.Label passwordLabel;
+    java.awt.Label passwordLabel1;
     javax.swing.JButton saveBtn;
+    javax.swing.JTextField speciallityTextField;
     javax.swing.JLabel title;
     javax.swing.JTextField userField;
     java.awt.Label userLabel;

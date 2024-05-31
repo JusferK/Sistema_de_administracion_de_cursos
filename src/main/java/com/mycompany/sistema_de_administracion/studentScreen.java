@@ -90,6 +90,11 @@ public class studentScreen extends javax.swing.JFrame {
                 logoutBtnMouseClicked(evt);
             }
         });
+        logoutBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logoutBtnActionPerformed(evt);
+            }
+        });
         basement.add(logoutBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1310, 670, -1, -1));
 
         background.setIcon(new javax.swing.ImageIcon("/home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/images/background-login.jpg")); // NOI18N
@@ -135,6 +140,10 @@ public class studentScreen extends javax.swing.JFrame {
         newFrame.setVisible(true);
         newFrame.setResizable(false);
     }//GEN-LAST:event_myProfileActionPerformed
+
+    private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_logoutBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

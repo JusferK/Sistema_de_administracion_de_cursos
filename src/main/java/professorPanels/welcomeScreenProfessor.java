@@ -1,10 +1,10 @@
 package professorPanels;
 public class welcomeScreenProfessor extends javax.swing.JPanel {
     
-    public welcomeScreenProfessor(String name) {
+    public welcomeScreenProfessor(com.mycompany.sistema_de_administracion.professor info) {
         
         initComponents();
-        welcomeLabel.setText("Welcome " + name + ", you are a professor");
+        welcomeLabel.setText("Welcome " + info.getName() + ", you are a professor");
     }
     
     @SuppressWarnings("unchecked")
