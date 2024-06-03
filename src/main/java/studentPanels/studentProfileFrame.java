@@ -24,6 +24,7 @@ public class studentProfileFrame extends javax.swing.JFrame {
         changPasswordBtn = new javax.swing.JButton();
         gradesQuery = new javax.swing.JButton();
         studentIDInput = new javax.swing.JTextField();
+        averageQueryBtn = new javax.swing.JButton();
         userLabel = new javax.swing.JLabel();
         nameLabel = new javax.swing.JLabel();
         iconLabel = new javax.swing.JLabel();
@@ -93,7 +94,7 @@ public class studentProfileFrame extends javax.swing.JFrame {
                 gradesQueryActionPerformed(evt);
             }
         });
-        basement.add(gradesQuery, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 420, 180, 50));
+        basement.add(gradesQuery, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 420, 180, 50));
 
         studentIDInput.setBackground(new java.awt.Color(71, 108, 166));
         studentIDInput.setFont(new java.awt.Font("Assistant", 0, 11)); // NOI18N
@@ -112,6 +113,16 @@ public class studentProfileFrame extends javax.swing.JFrame {
             }
         });
         basement.add(studentIDInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, 440, 50));
+
+        averageQueryBtn.setBackground(new java.awt.Color(3, 27, 59));
+        averageQueryBtn.setForeground(new java.awt.Color(255, 255, 255));
+        averageQueryBtn.setText("Query average");
+        averageQueryBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                averageQueryBtnActionPerformed(evt);
+            }
+        });
+        basement.add(averageQueryBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 420, 180, 50));
 
         userLabel.setIcon(new javax.swing.ImageIcon("/home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/images/carne-icon.png")); // NOI18N
         basement.add(userLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, -1, -1));
@@ -187,8 +198,15 @@ public class studentProfileFrame extends javax.swing.JFrame {
         newFrame.setVisible(true);
         newFrame.setResizable(false);
     }//GEN-LAST:event_gradesQueryActionPerformed
+
+    private void averageQueryBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_averageQueryBtnActionPerformed
+        averageFrame newFrame = new averageFrame(globalStudentInfo);
+        newFrame.setVisible(true);
+        newFrame.setResizable(false);
+    }//GEN-LAST:event_averageQueryBtnActionPerformed
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    javax.swing.JButton averageQueryBtn;
     javax.swing.JLabel backgroundLabel;
     javax.swing.JPanel basement;
     javax.swing.JButton changPasswordBtn;

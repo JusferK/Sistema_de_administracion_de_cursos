@@ -47,7 +47,7 @@ public class coursesAssignedProfessorP extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(studentsTable);
 
-        basement.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 110, 370, 430));
+        basement.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 110, 370, 430));
 
         title.setFont(new java.awt.Font("Assistant ExtraBold", 0, 36)); // NOI18N
         title.setForeground(new java.awt.Color(255, 255, 255));
@@ -64,9 +64,14 @@ public class coursesAssignedProfessorP extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(coursesTable);
 
-        basement.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 580, 430));
+        basement.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 580, 430));
 
-        basement.add(courseComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(1010, 110, 170, 40));
+        courseComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                courseComboBoxActionPerformed(evt);
+            }
+        });
+        basement.add(courseComboBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 110, 230, 40));
 
         selectBtn.setBackground(new java.awt.Color(3, 27, 59));
         selectBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -76,7 +81,7 @@ public class coursesAssignedProfessorP extends javax.swing.JPanel {
                 selectBtnActionPerformed(evt);
             }
         });
-        basement.add(selectBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 170, 130, 50));
+        basement.add(selectBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1030, 160, 130, 50));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -98,11 +103,14 @@ public class coursesAssignedProfessorP extends javax.swing.JPanel {
         
         for (com.mycompany.sistema_de_administracion.Class cL : coursesArray) {
             
-            if (courseName.equals(cL.courseName)) {
+            int iteratorCourseNameSize = cL.courseName.length();
+            String getCourseNameFromCombo = courseName.substring(0, iteratorCourseNameSize);
+            String getIDCourseFromCombo = courseName.substring((iteratorCourseNameSize + 1), courseName.length());
+            
+            
+            if (getCourseNameFromCombo.equals(cL.courseName) && getIDCourseFromCombo.equals(cL.ID)) {
                 
-                int arrayCoursesSize = cL.studentAssignedList.size();
-                
-                DefaultTableModel studentQueryTable = new DefaultTableModel(new String[]{"Name", "last name", "student ID"}, arrayCoursesSize);
+                DefaultTableModel studentQueryTable = new DefaultTableModel(new String[]{"Name", "last name", "student ID"}, cL.studentAssignedList.size());
                 studentsTable.setModel(studentQueryTable);
                 
                 int row = 0;
@@ -117,6 +125,10 @@ public class coursesAssignedProfessorP extends javax.swing.JPanel {
             }
         }
     }//GEN-LAST:event_selectBtnActionPerformed
+
+    private void courseComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_courseComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_courseComboBoxActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -161,7 +173,7 @@ public class coursesAssignedProfessorP extends javax.swing.JPanel {
 
     public void setComboBox(ArrayList<com.mycompany.sistema_de_administracion.Class> temporaryArray) {
         for (com.mycompany.sistema_de_administracion.Class cL : temporaryArray) {
-            courseComboBox.addItem(cL.courseName);
+            courseComboBox.addItem(cL.courseName + " " + cL.ID);
         }
     }
 }

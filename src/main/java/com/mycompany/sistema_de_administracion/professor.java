@@ -1,5 +1,10 @@
 package com.mycompany.sistema_de_administracion;
-public class professor extends administrator {
+
+import java.io.Serializable;
+
+public class professor extends administrator implements Serializable {
+    
+    private static final long serialVersionUID = 1L;
     
     private String name;
     public String lastName;
@@ -20,14 +25,20 @@ public class professor extends administrator {
         this.speciallity = speciallity;
     }
     
+    public professor() {
+        
+    }
+    
     public static boolean professorLogin(String userField, String passwordField) {
         boolean found = false;
-        for (professor p : Sistema_De_Administracion.professorsList) {
-            if (p.user.equals(userField) && p.password.equals(passwordField)) {
-                found = true;
-                break;
-            } else {
-                found = false;
+        if (!Sistema_De_Administracion.professorsList.isEmpty()) {
+            for (professor p : Sistema_De_Administracion.professorsList) {
+                if (p.user.equals(userField) && p.password.equals(passwordField)) {
+                    found = true;
+                    break;
+                } else {
+                    found = false;
+                }
             }
         }
         return found;

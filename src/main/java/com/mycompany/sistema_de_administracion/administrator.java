@@ -1,21 +1,26 @@
 package com.mycompany.sistema_de_administracion;
 
+import java.io.Serializable;
 import javax.swing.JFrame;
 
-public class administrator {
+public class administrator implements Serializable {
     
     public String user;
     public String password;
     private String adminName;
     
-    public administrator(String user, String password) { // constructor que hereda professor
+    public administrator(String user, String password) {
         this.user = user;
         this.password = password;
     }
     
-    public administrator(String user, String password, String adminName) { // constructor para crear una instancia de administrator
+    public administrator(String user, String password, String adminName) {
         this(user, password);
         this.adminName = adminName;
+    }
+    
+    public administrator() {
+        
     }
     
     public administrator(String password) {

@@ -1,9 +1,10 @@
 package adminPanels;
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-public class createCoursePanel extends javax.swing.JPanel {
+public class createCoursePanel extends javax.swing.JPanel implements Serializable {
     
     public static ArrayList<String> threeCharList = new ArrayList<>();
     public static int counter = 0;

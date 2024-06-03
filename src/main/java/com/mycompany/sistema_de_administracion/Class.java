@@ -1,8 +1,11 @@
 package com.mycompany.sistema_de_administracion;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Class {
+public class Class implements Serializable {
+    
+    private static final long serialVersionUID = 1L;
     
     public String ID;
     public String courseName;

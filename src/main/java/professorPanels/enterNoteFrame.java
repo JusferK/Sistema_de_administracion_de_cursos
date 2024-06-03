@@ -36,7 +36,8 @@ public class enterNoteFrame extends javax.swing.JFrame {
 
         noteTitle.setFont(new java.awt.Font("Assistant ExtraBold", 0, 36)); // NOI18N
         noteTitle.setForeground(new java.awt.Color(255, 255, 255));
-        basement.add(noteTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 580, 60));
+        noteTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        basement.add(noteTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 600, 60));
 
         assignBtn.setBackground(new java.awt.Color(3, 27, 59));
         assignBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -54,7 +55,8 @@ public class enterNoteFrame extends javax.swing.JFrame {
 
         studentNameLabel.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         studentNameLabel.setForeground(new java.awt.Color(255, 255, 255));
-        basement.add(studentNameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 270, 60));
+        studentNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        basement.add(studentNameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 460, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon("/home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/images/background-login.jpg")); // NOI18N
         basement.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 400));

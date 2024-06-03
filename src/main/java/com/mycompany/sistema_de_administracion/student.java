@@ -1,6 +1,9 @@
 package com.mycompany.sistema_de_administracion;
+import java.io.Serializable;
 import java.util.ArrayList;
-public class student extends administrator {
+public class student extends administrator implements Serializable {
+    
+    private static final long serialVersionUID = 1L;
     
     private String studentID;
     private String studentName;

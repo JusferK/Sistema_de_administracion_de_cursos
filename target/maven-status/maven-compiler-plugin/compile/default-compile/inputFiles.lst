@@ -17,6 +17,7 @@
 /home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/adminPanels/createCoursePanel.java
 /home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/professorPanels/coursesAssignedProfessorP.java
 /home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/adminPanels/editCoursePanel.java
+/home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/studentPanels/averageFrame.java
 /home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/com/mycompany/sistema_de_administracion/Login.java
 /home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/adminPanels/welcomeAdmin.java
 /home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/studentPanels/assignToCoursePanel.java
@@ -32,6 +33,7 @@
 /home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/adminPanels/massiveLoadsStudentP.java
 /home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/adminPanels/createProfP.java
 /home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/studentPanels/coursesAssignedStudentPanel.java
+/home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/com/mycompany/sistema_de_administracion/mi_serializacion.java
 /home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/com/mycompany/sistema_de_administracion/Sistema_De_Administracion.java
 /home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/adminPanels/editCourseFrame.java
 /home/justine/NetBeansProjects/Sistema_De_Administracion/src/main/java/adminPanels/massiveLoadsProfessor.java
