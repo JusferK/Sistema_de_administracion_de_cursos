@@ -347,7 +347,7 @@ public class massiveLoadsClassP extends javax.swing.JPanel {
             }
         } else if(typeOfAction == "Assignment" && holder) {
             if (!com.mycompany.sistema_de_administracion.Sistema_De_Administracion.classList.isEmpty() && !com.mycompany.sistema_de_administracion.Sistema_De_Administracion.studentList.isEmpty()) {
-                readCSVFileAssignment(fileOrPath);
+                readFileAssignment(fileOrPath);
             } else {
                 JOptionPane.showMessageDialog(this, "No students or courses to assign to");
             }
@@ -404,7 +404,7 @@ public class massiveLoadsClassP extends javax.swing.JPanel {
         return holder;
     }
     
-    private void readCSVFileAssignment(String path) {
+    private void readFileAssignment(String path) {
         
         ArrayList<String> studentsIDsNotFound = new ArrayList<>(); 
         ArrayList<String> classesIDsNotFound = new ArrayList<>();
@@ -420,7 +420,6 @@ public class massiveLoadsClassP extends javax.swing.JPanel {
             String line;
             while((line = br.readLine()) != null) {
                 fileLinesCounter++;
-                System.out.println(line);
                 
                 int indexOfHashTag = line.indexOf("#");
                 
@@ -447,6 +446,7 @@ public class massiveLoadsClassP extends javax.swing.JPanel {
                 if (studentFound != null && classFound != null) {
                     if (studentFound.coursesAssigned.size() <= 5 && classFound.studentAssignedList.size() <= 10) {
                         studentFound.coursesAssigned.add(classFound);
+                        studentFound.coursesFinalNote.add(-1);
                         classFound.studentAssignedList.add(studentFound);
                         assignmentsMadeSuccessfully++;
                     } else {
