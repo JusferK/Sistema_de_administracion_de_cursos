@@ -6,7 +6,7 @@ public class professorQuery extends javax.swing.JPanel {
         
         initComponents();
         
-        DefaultTableModel professorQueryTable = new DefaultTableModel(new String[]{"Name", "Last name", "Speciallity"}, com.mycompany.sistema_de_administracion.Sistema_De_Administracion.professorsList.size());
+        DefaultTableModel professorQueryTable = new DefaultTableModel(new String[]{"Name", "Last name", "Speciallity", "Sex"}, com.mycompany.sistema_de_administracion.Sistema_De_Administracion.professorsList.size());
         professorQTable.setModel(professorQueryTable);
         
         int rows = 0;
@@ -15,6 +15,7 @@ public class professorQuery extends javax.swing.JPanel {
             professorQTable.setValueAt(p.getName(), rows, 0);
             professorQTable.setValueAt(p.lastName, rows, 1);
             professorQTable.setValueAt(p.speciallity, rows, 2);
+            professorQTable.setValueAt(p.sex, rows, 3);
             rows++;
         }
     }

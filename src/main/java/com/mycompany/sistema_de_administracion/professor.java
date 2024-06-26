@@ -9,6 +9,7 @@ public class professor extends administrator implements Serializable {
     private String name;
     public String lastName;
     public String speciallity;
+    public String sex;
 
     public String getName() {
         return name;
@@ -18,11 +19,12 @@ public class professor extends administrator implements Serializable {
         this.name = name;
     }
     
-    public professor(String name, String lastName, String user, String password, String speciallity) {
+    public professor(String name, String lastName, String user, String password, String speciallity, String sex) {
         super(user, password);
         this.name = name;
         this.lastName = lastName;
         this.speciallity = speciallity;
+        this.sex = sex;
     }
     
     public professor() {

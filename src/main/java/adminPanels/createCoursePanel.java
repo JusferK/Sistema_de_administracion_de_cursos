@@ -44,6 +44,8 @@ public class createCoursePanel extends javax.swing.JPanel implements Serializabl
         startHourCombo = new javax.swing.JComboBox<>();
         finishHourCombo = new javax.swing.JComboBox<>();
         saveBtn = new javax.swing.JButton();
+        passwordLabel1 = new java.awt.Label();
+        universityCenterField = new javax.swing.JTextField();
 
         basement.setForeground(new java.awt.Color(255, 255, 255));
         basement.setPreferredSize(new java.awt.Dimension(1500, 540));
@@ -121,7 +123,7 @@ public class createCoursePanel extends javax.swing.JPanel implements Serializabl
         instructions.setToolTipText("");
         instructions.setAlignmentX(0.5F);
         instructions.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        basement.add(instructions, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, 860, 130));
+        basement.add(instructions, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 860, 130));
 
         courseName1.setAlignment(java.awt.Label.CENTER);
         courseName1.setBackground(new java.awt.Color(3, 27, 59));
@@ -187,6 +189,21 @@ public class createCoursePanel extends javax.swing.JPanel implements Serializabl
         });
         basement.add(saveBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 240, 120, 40));
 
+        passwordLabel1.setAlignment(java.awt.Label.CENTER);
+        passwordLabel1.setBackground(new java.awt.Color(3, 27, 59));
+        passwordLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        passwordLabel1.setText("Center");
+        basement.add(passwordLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 150, 40));
+
+        universityCenterField.setBackground(new java.awt.Color(71, 108, 166));
+        universityCenterField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        universityCenterField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                universityCenterFieldActionPerformed(evt);
+            }
+        });
+        basement.add(universityCenterField, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 290, 240, 40));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -195,7 +212,7 @@ public class createCoursePanel extends javax.swing.JPanel implements Serializabl
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(basement, javax.swing.GroupLayout.DEFAULT_SIZE, 479, Short.MAX_VALUE)
+            .addComponent(basement, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
         );
 
         basement.setOpaque(false);
@@ -250,6 +267,7 @@ public class createCoursePanel extends javax.swing.JPanel implements Serializabl
         String professorSelected = professorComboList.getSelectedItem().toString();
         String startDate = startDateField.getText();
         String finishDate = finishDateField.getText();
+        String universityCenter = universityCenterField.getText();
         
         int startHour = Integer.parseInt(startHourField.getText());
         int finishHour = Integer.parseInt(finishHourField.getText());
@@ -261,7 +279,7 @@ public class createCoursePanel extends javax.swing.JPanel implements Serializabl
             
             String ID = generateID(courseName, threeCharList);
             
-            com.mycompany.sistema_de_administracion.Class newCourse = new com.mycompany.sistema_de_administracion.Class(ID, courseName, section, professorSelected, startDate, finishDate, startHourComb, finishHourComb, startHour, finishHour);
+            com.mycompany.sistema_de_administracion.Class newCourse = new com.mycompany.sistema_de_administracion.Class(ID, courseName, section, professorSelected, startDate, finishDate, startHourComb, finishHourComb, startHour, finishHour, universityCenter);
             com.mycompany.sistema_de_administracion.Sistema_De_Administracion.classList.add(newCourse);
         
         
@@ -285,6 +303,10 @@ public class createCoursePanel extends javax.swing.JPanel implements Serializabl
         }
     }//GEN-LAST:event_saveBtnActionPerformed
 
+    private void universityCenterFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_universityCenterFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_universityCenterFieldActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     javax.swing.JPanel basement;
@@ -301,6 +323,7 @@ public class createCoursePanel extends javax.swing.JPanel implements Serializabl
     javax.swing.JLabel instructions;
     java.awt.Label lastNameLabel;
     java.awt.Label passwordLabel;
+    java.awt.Label passwordLabel1;
     javax.swing.JComboBox<String> professorComboList;
     javax.swing.JButton saveBtn;
     javax.swing.JTextField sectionField;
@@ -308,6 +331,7 @@ public class createCoursePanel extends javax.swing.JPanel implements Serializabl
     javax.swing.JComboBox<String> startHourCombo;
     javax.swing.JTextField startHourField;
     javax.swing.JLabel title;
+    javax.swing.JTextField universityCenterField;
     java.awt.Label userLabel;
     // End of variables declaration//GEN-END:variables
 

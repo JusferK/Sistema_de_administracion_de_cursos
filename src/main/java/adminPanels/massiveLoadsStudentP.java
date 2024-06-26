@@ -257,8 +257,9 @@ public class massiveLoadsStudentP extends javax.swing.JPanel {
                             String studentLastName = (String) student.get("studentLastName");
                             String studentID = (String) student.get("studentID");
                             String studentPassword = (String) student.get("password");
+                            String studentSex = (String) student.get("sex");
 
-                            com.mycompany.sistema_de_administracion.student newStudent = new com.mycompany.sistema_de_administracion.student(studentName, studentLastName, studentID, studentPassword);
+                            com.mycompany.sistema_de_administracion.student newStudent = new com.mycompany.sistema_de_administracion.student(studentName, studentLastName, studentID, studentPassword, studentSex);
                             com.mycompany.sistema_de_administracion.Sistema_De_Administracion.studentList.add(newStudent);
                         } else {
                             securityBelt = true;
@@ -329,7 +330,7 @@ public class massiveLoadsStudentP extends javax.swing.JPanel {
             while((line = br.readLine()) != null) {
                 String[] data = line.split(",");
                 if (data.length == 4) {
-                    com.mycompany.sistema_de_administracion.student newStudent = new com.mycompany.sistema_de_administracion.student(data[0], data[1], data[2], data[3]);
+                    com.mycompany.sistema_de_administracion.student newStudent = new com.mycompany.sistema_de_administracion.student(data[0], data[1], data[2], data[3], data[4]);
                     com.mycompany.sistema_de_administracion.Sistema_De_Administracion.studentList.add(newStudent);
                     itemsAdded++;
                 } else {
@@ -368,8 +369,9 @@ public class massiveLoadsStudentP extends javax.swing.JPanel {
                     String lastName = e.getElementsByTagName("studentLastName").item(0).getTextContent();
                     String user = e.getElementsByTagName("studentID").item(0).getTextContent();
                     String password = e.getElementsByTagName("password").item(0).getTextContent();
+                    String sex = e.getElementsByTagName("sex").item(0).getTextContent();
 
-                    com.mycompany.sistema_de_administracion.student sT = new com.mycompany.sistema_de_administracion.student(name, lastName, user, password);
+                    com.mycompany.sistema_de_administracion.student sT = new com.mycompany.sistema_de_administracion.student(name, lastName, user, password, sex);
                     com.mycompany.sistema_de_administracion.Sistema_De_Administracion.studentList.add(sT);
                 }
             }

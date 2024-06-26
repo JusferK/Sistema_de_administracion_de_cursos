@@ -138,9 +138,10 @@ public class createProfP extends javax.swing.JPanel {
         String userName = userField.getText();
         String password = passwordField.getText();
         String speciallityField = speciallityTextField.getText();
+        String sex = "maxculine";
         
         if(name.matches(Regexes[0]) && lastName.matches(Regexes[0]) && userName.matches(Regexes[1]) && password.matches(Regexes[2])) {
-            com.mycompany.sistema_de_administracion.professor newProfessor = new com.mycompany.sistema_de_administracion.professor(name, lastName, userName, password, speciallityField);
+            com.mycompany.sistema_de_administracion.professor newProfessor = new com.mycompany.sistema_de_administracion.professor(name, lastName, userName, password, speciallityField, sex);
             com.mycompany.sistema_de_administracion.Sistema_De_Administracion.professorsList.add(newProfessor);
         
             JOptionPane.showMessageDialog(this, "Professor was created succesfully!");

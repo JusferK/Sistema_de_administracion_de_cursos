@@ -15,11 +15,12 @@ public class Class implements Serializable {
     public String finishDate;
     public String startHourAmOrPm;
     public String finishHourAmOrPm;
+    public String universityCenter;
     public int startHour;
     public int finishHour;
     public ArrayList<student> studentAssignedList = new ArrayList<>();
     
-    public Class(String ID, String courseName, String section, String professorAssigned, String startDate, String finishDate, String startHourAmOrPm, String finishHourAmOrPm,  int startHour, int finishHour) {
+    public Class(String ID, String courseName, String section, String professorAssigned, String startDate, String finishDate, String startHourAmOrPm, String finishHourAmOrPm,  int startHour, int finishHour, String universityCenter) {
         this.ID = ID;
         this.courseName = courseName;
         this.section = section;
@@ -30,6 +31,7 @@ public class Class implements Serializable {
         this.finishHourAmOrPm = finishHourAmOrPm;
         this.startHour = startHour;
         this.finishHour = finishHour;
+        this.universityCenter = universityCenter;
     }
     
 }

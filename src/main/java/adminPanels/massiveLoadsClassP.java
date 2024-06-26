@@ -282,7 +282,7 @@ public class massiveLoadsClassP extends javax.swing.JPanel {
                     for (Object instanceObj : professorInJSON) {
                         JSONObject course = (JSONObject) instanceObj;
 
-                        if (course.size()== 9) {
+                        if (course.size()== 10) {
                             
                             String courseName = String.valueOf(course.get("courseName"));
                             String section = String.valueOf(course.get("section"));
@@ -293,10 +293,11 @@ public class massiveLoadsClassP extends javax.swing.JPanel {
                             String finishHourAmOrPm = String.valueOf(course.get("finishHourAmOrPm"));
                             int startHour = Integer.parseInt(String.valueOf(course.get("startHour")));
                             int finishHour = Integer.parseInt(String.valueOf(course.get("finishHour")));
+                            String universityCenter = String.valueOf(course.get("university_center"));
                             createCoursePanel myMethod = new createCoursePanel();
                             String ID = myMethod.generateID(courseName, createCoursePanel.threeCharList);
 
-                            com.mycompany.sistema_de_administracion.Class newClass = new com.mycompany.sistema_de_administracion.Class(ID, courseName, section, professorAssigned, startDate, finishDate, startHourAmOrPm, finishHourAmOrPm, startHour, finishHour);
+                            com.mycompany.sistema_de_administracion.Class newClass = new com.mycompany.sistema_de_administracion.Class(ID, courseName, section, professorAssigned, startDate, finishDate, startHourAmOrPm, finishHourAmOrPm, startHour, finishHour, universityCenter);
                             com.mycompany.sistema_de_administracion.Sistema_De_Administracion.classList.add(newClass);
                         } else {
                             securityBelt = true;
@@ -379,12 +380,12 @@ public class massiveLoadsClassP extends javax.swing.JPanel {
             String line;
             while((line = br.readLine()) != null) {
                 String[] data = line.split(",");
-                if (data.length == 9) {
+                if (data.length == 10) {
                     
                     createCoursePanel myMethod = new createCoursePanel();
                     String ID = myMethod.generateID(data[0], createCoursePanel.threeCharList);
                     
-                    com.mycompany.sistema_de_administracion.Class newClass = new com.mycompany.sistema_de_administracion.Class(ID, data[0], data[1], data[2], data[3], data[4], data[5], data[6], Integer.parseInt(data[7]), Integer.parseInt(data[8]));
+                    com.mycompany.sistema_de_administracion.Class newClass = new com.mycompany.sistema_de_administracion.Class(ID, data[0], data[1], data[2], data[3], data[4], data[5], data[6], Integer.parseInt(data[7]), Integer.parseInt(data[8]), data[9]);
                     com.mycompany.sistema_de_administracion.Sistema_De_Administracion.classList.add(newClass);
                     itemsAdded++;
                 } else {
@@ -500,12 +501,13 @@ public class massiveLoadsClassP extends javax.swing.JPanel {
                     String finishHourAmOrPm = e.getElementsByTagName("finishHourAmOrPm").item(0).getTextContent();
                     int startHour = Integer.parseInt(e.getElementsByTagName("startHour").item(0).getTextContent());
                     int finishHour = Integer.parseInt(e.getElementsByTagName("finishHour").item(0).getTextContent());
+                    String universityCenter = String.valueOf(e.getElementsByTagName("universityCenter").item(0).getTextContent());
                     
                     createCoursePanel myMethod = new createCoursePanel();
                     String ID = myMethod.generateID(courseName, createCoursePanel.threeCharList);
                     
 
-                    com.mycompany.sistema_de_administracion.Class cL = new com.mycompany.sistema_de_administracion.Class(ID, courseName, section, professorAssigned, startDate, finishDate, startHourAmOrPm, finishHourAmOrPm, startHour, finishHour);
+                    com.mycompany.sistema_de_administracion.Class cL = new com.mycompany.sistema_de_administracion.Class(ID, courseName, section, professorAssigned, startDate, finishDate, startHourAmOrPm, finishHourAmOrPm, startHour, finishHour, universityCenter);
                     com.mycompany.sistema_de_administracion.Sistema_De_Administracion.classList.add(cL);
                 }
             }

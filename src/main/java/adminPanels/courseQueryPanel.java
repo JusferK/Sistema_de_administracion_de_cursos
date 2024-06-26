@@ -65,7 +65,7 @@ public class courseQueryPanel extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     public void setTableUp() {
-        DefaultTableModel coursesQueryTable = new DefaultTableModel(new String[]{"Course", "Professor", "Section", "Start date", "Finish date", "Start hour", "Finish hour", "course ID"}, com.mycompany.sistema_de_administracion.Sistema_De_Administracion.classList.size());
+        DefaultTableModel coursesQueryTable = new DefaultTableModel(new String[]{"Course", "Professor", "Section", "Start date", "Finish date", "Start hour", "Finish hour", "course ID", "university Center"}, com.mycompany.sistema_de_administracion.Sistema_De_Administracion.classList.size());
         coursesQTable.setModel(coursesQueryTable);
         
         int rows = 0;
@@ -79,6 +79,7 @@ public class courseQueryPanel extends javax.swing.JPanel {
             coursesQTable.setValueAt(c.startHour + ":00 " + c.startHourAmOrPm, rows, 5);
             coursesQTable.setValueAt(c.finishHour + ":00 " + c.finishHourAmOrPm, rows, 6);
             coursesQTable.setValueAt(c.ID, rows, 7);
+            coursesQTable.setValueAt(c.universityCenter, rows, 8);
             rows++;
         }
     }

@@ -136,6 +136,7 @@ adminPanels/createCoursePanel$1.class
 professorPanels/coursesAssignedProfessorP$2.class
 studentPanels/changePasswordStudentFrame.class
 adminPanels/createStudentP$2.class
+adminPanels/createCoursePanel$8.class
 com/mycompany/sistema_de_administracion/studentScreen$1.class
 studentPanels/gradesQueryFrame$4.class
 com/mycompany/sistema_de_administracion/studentScreen.class

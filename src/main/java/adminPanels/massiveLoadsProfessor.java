@@ -237,8 +237,9 @@ public class massiveLoadsProfessor extends javax.swing.JPanel {
                             String professorUserName = (String) professor.get("user");
                             String professorPassword = (String) professor.get("password");
                             String professorSpeciallity = (String) professor.get("speciallity");
+                            String professorSex = (String) professor.get("sex");
 
-                            com.mycompany.sistema_de_administracion.professor newProfessor = new com.mycompany.sistema_de_administracion.professor(professorName, professorLastName, professorUserName, professorPassword, professorSpeciallity);
+                            com.mycompany.sistema_de_administracion.professor newProfessor = new com.mycompany.sistema_de_administracion.professor(professorName, professorLastName, professorUserName, professorPassword, professorSpeciallity, professorSex);
                             com.mycompany.sistema_de_administracion.Sistema_De_Administracion.professorsList.add(newProfessor);
                         } else {
                             securityBelt = true;
@@ -334,9 +335,9 @@ public class massiveLoadsProfessor extends javax.swing.JPanel {
             
             String line;
             while((line = br.readLine()) != null) {
-                String[] data = line.split(",");
-                if (data.length == 5) {
-                    com.mycompany.sistema_de_administracion.professor newProfessor = new com.mycompany.sistema_de_administracion.professor(data[0], data[1], data[2], data[3], data[4]);
+                String[] data = line.split(":");
+                if (data.length == 6) {
+                    com.mycompany.sistema_de_administracion.professor newProfessor = new com.mycompany.sistema_de_administracion.professor(data[0], data[1], data[2], data[3], data[4], data[5]);
                     com.mycompany.sistema_de_administracion.Sistema_De_Administracion.professorsList.add(newProfessor);
                     itemsAdded++;
                 } else {
@@ -376,7 +377,9 @@ public class massiveLoadsProfessor extends javax.swing.JPanel {
                     String user = e.getElementsByTagName("user").item(0).getTextContent();
                     String password = e.getElementsByTagName("password").item(0).getTextContent();
                     String speciallity = e.getElementsByTagName("speciallity").item(0).getTextContent();
-                    com.mycompany.sistema_de_administracion.professor pF = new com.mycompany.sistema_de_administracion.professor(name, lastName, user, password, speciallity);
+                    String sex = e.getElementsByTagName("sex").item(0).getTextContent();
+                    
+                    com.mycompany.sistema_de_administracion.professor pF = new com.mycompany.sistema_de_administracion.professor(name, lastName, user, password, speciallity, sex);
                     com.mycompany.sistema_de_administracion.Sistema_De_Administracion.professorsList.add(pF);
                 }
             }

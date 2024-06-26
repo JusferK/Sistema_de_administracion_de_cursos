@@ -5,7 +5,7 @@ public class studentQuery extends javax.swing.JPanel {
     public studentQuery() {
         initComponents();
         
-        DefaultTableModel studentQueryTable = new DefaultTableModel(new String[]{"Name", "Last name", "Student ID"}, com.mycompany.sistema_de_administracion.Sistema_De_Administracion.studentList.size());
+        DefaultTableModel studentQueryTable = new DefaultTableModel(new String[]{"Name", "Last name", "Student ID", "sex"}, com.mycompany.sistema_de_administracion.Sistema_De_Administracion.studentList.size());
         studentQTable.setModel(studentQueryTable);
         
         int rows = 0;
@@ -14,6 +14,7 @@ public class studentQuery extends javax.swing.JPanel {
             studentQTable.setValueAt(s.getStudentName(), rows, 0);
             studentQTable.setValueAt(s.getStudentLastName(), rows, 1);
             studentQTable.setValueAt(s.getStudentID(), rows, 2);
+            studentQTable.setValueAt(s.sex, rows, 3);
             rows++;
         }
     }

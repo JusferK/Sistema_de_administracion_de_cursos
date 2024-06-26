@@ -8,14 +8,16 @@ public class student extends administrator implements Serializable {
     private String studentID;
     private String studentName;
     private String studentLastName;
+    public String sex;
     public ArrayList<Class> coursesAssigned = new ArrayList<>();
     public ArrayList<Integer> coursesFinalNote = new ArrayList<>();
     
-    public student(String studentName, String studentLastName, String studentID, String password) {
+    public student(String studentName, String studentLastName, String studentID, String password, String sex) {
         super(password);
         this.studentName = studentName;
         this.studentLastName = studentLastName;
         this.studentID = studentID;
+        this.sex = sex;
     }
     
     public String getStudentName() {

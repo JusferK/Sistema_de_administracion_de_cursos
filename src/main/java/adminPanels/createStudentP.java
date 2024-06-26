@@ -22,6 +22,8 @@ public class createStudentP extends javax.swing.JPanel {
         passwordField = new javax.swing.JTextField();
         saveBtn = new javax.swing.JButton();
         instructions = new javax.swing.JLabel();
+        passwordLabel1 = new java.awt.Label();
+        sexField = new javax.swing.JTextField();
 
         basement.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -51,8 +53,8 @@ public class createStudentP extends javax.swing.JPanel {
         passwordLabel.setAlignment(java.awt.Label.CENTER);
         passwordLabel.setBackground(new java.awt.Color(3, 27, 59));
         passwordLabel.setForeground(new java.awt.Color(255, 255, 255));
-        passwordLabel.setText("Password");
-        basement.add(passwordLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 300, 90, 40));
+        passwordLabel.setText("Sex");
+        basement.add(passwordLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 350, 90, 40));
 
         nameField.setBackground(new java.awt.Color(71, 108, 166));
         nameField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -83,7 +85,7 @@ public class createStudentP extends javax.swing.JPanel {
                 saveBtnActionPerformed(evt);
             }
         });
-        basement.add(saveBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 360, 100, 40));
+        basement.add(saveBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 420, 100, 40));
 
         instructions.setFont(new java.awt.Font("Assistant", 0, 14)); // NOI18N
         instructions.setForeground(new java.awt.Color(255, 255, 255));
@@ -93,6 +95,16 @@ public class createStudentP extends javax.swing.JPanel {
         instructions.setAlignmentX(0.5F);
         instructions.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         basement.add(instructions, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 140, 370, 250));
+
+        passwordLabel1.setAlignment(java.awt.Label.CENTER);
+        passwordLabel1.setBackground(new java.awt.Color(3, 27, 59));
+        passwordLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        passwordLabel1.setText("Password");
+        basement.add(passwordLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 300, 90, 40));
+
+        sexField.setBackground(new java.awt.Color(71, 108, 166));
+        sexField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        basement.add(sexField, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 350, 240, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -122,9 +134,10 @@ public class createStudentP extends javax.swing.JPanel {
         String lastName = lastNameField.getText();
         String studentID = studentIDField.getText();
         String password = passwordField.getText();
+        String sex = sexField.getText();
 
         if (password.matches(Regexes[2]) && name.matches(Regexes[0]) && lastName.matches(Regexes[0]) && studentID.matches(Regexes[1])) {
-            com.mycompany.sistema_de_administracion.student newStudent = new com.mycompany.sistema_de_administracion.student(name, lastName, studentID, password);
+            com.mycompany.sistema_de_administracion.student newStudent = new com.mycompany.sistema_de_administracion.student(name, lastName, studentID, password, sex);
             com.mycompany.sistema_de_administracion.Sistema_De_Administracion.studentList.add(newStudent);
 
             JOptionPane.showMessageDialog(this, "Student was created succesfully!");
@@ -147,7 +160,9 @@ public class createStudentP extends javax.swing.JPanel {
     java.awt.Label nameLabel;
     javax.swing.JTextField passwordField;
     java.awt.Label passwordLabel;
+    java.awt.Label passwordLabel1;
     javax.swing.JButton saveBtn;
+    javax.swing.JTextField sexField;
     java.awt.Label studenID;
     javax.swing.JTextField studentIDField;
     javax.swing.JLabel title;
